@@ -1,0 +1,2 @@
+<a href="#"><%= @school.get('title') %></a>
+<a class="delete" href="#">Delete</a>

@@ -1,0 +1,10 @@
+<h2>Schools</h2>
+
+<form id="new_school">
+	<input type="text" name="title" id="new_school_title">
+	<input type="submit" value="Add">
+</form>
+
+<ul id="schools"></ul>
+
+
