@@ -44,3 +44,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'backbone-on-rails'
+gem 'rails_12factor', group: :production
