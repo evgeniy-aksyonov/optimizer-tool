@@ -2,21 +2,27 @@
 
 <form id="new_school">
 	<div class="title-wrapper">
-		<label for="title">School:</label>
-		<input type="text" name="title" id="new_school_title">
+		<div class="form-group">
+			<label for="title">School:</label>
+			<input type="text" name="title" id="new_school_title" placeholder="Enter title">
+		</div>
 	</div>
 
 	<div class="students-teachers-wrapper">
 		<div class="students-wrapper">
-			<label for="students">Students:</label>
-			<input type="text" name="students" id="students_count">
+			<div class="form-group">
+				<label for="students">Students:</label>
+				<input type="text" name="students" id="students_count" placeholder="Enter number">
+		  </div>	
 		</div>
 
 		<div class="teachers-wrapper">
-			<label for="teachers">Staff:</label>
-			<input type="text" name="teachers" id="teachers_count">
+			<div class="form-group">
+				<label for="teachers">Staff:</label>
+				<input type="text" name="teachers" id="teachers_count" placeholder="Enter number">
+			</div>
 		</div>
 	</div>
 
-	<input type="submit" value="Add">
+	<button type="submit" class="btn btn-success">Add school</button>
 </form>

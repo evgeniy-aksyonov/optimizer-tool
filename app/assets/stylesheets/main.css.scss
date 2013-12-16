@@ -21,8 +21,6 @@ body {
 			}
 
 			.title-wrapper, .students-teachers-wrapper {
-				background-color: #C7C7C7;
-				padding: 15px;
 				border-radius: 5px;
 			}
 
@@ -36,7 +34,7 @@ body {
 				float: left;
 
 				input {
-					width: 94%;
+					width: 92%;
 				}
 			}
 
@@ -44,7 +42,7 @@ body {
 				margin-bottom: 5px;
 
 				input {
-					width: 82%;
+					width: 96%;
 				}
 			}
 
@@ -53,33 +51,6 @@ body {
 				font-size: 18px;
 			}
 
-			input[type="submit"] {
-				width: 100%;
-				font-size: 24px;
-				padding: 5px;
-				margin-top: 5px;
-				color: #5d7731;
-				border-bottom: 4px solid #799545;
-				text-shadow: 0px 1px 0px #d5e8aa;
-				background: #cae285;
-				background: -webkit-gradient(linear, left top, left bottom, from(#cae285), to(#a3cd5a));
-				background: -moz-linear-gradient(top, #cae285, #a3cd5a);
-				box-shadow: inset 1px 1px 0 #cce3a1;
-			}
-			
-			input[type="submit"]:hover {
-				background: -webkit-gradient(linear, left top, left bottom, from(#a3cd5a), to(#cae285));
-				background: -moz-linear-gradient(top, #a3cd5a, #cae285);
-			}
-
-			input[type="submit"]:active {
-				border: none;
-				bottom: -4px;
-				margin-bottom: 22px;
-				-webkit-box-shadow: 0 1px 1px #fff;
-				-moz-box-shadow: 0 1px 1px #fff;
-				box-shadow: 1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, 0.3);
-			}
 		}
 	}
 }
