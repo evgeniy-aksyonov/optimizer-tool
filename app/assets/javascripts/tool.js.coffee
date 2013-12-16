@@ -5,7 +5,7 @@ window.Tool =
   Routers: {}
   initialize: ->
   	new Tool.Routers.Schools()
-  	Backbone.history.start()
+  	Backbone.history.start({pushState: true})
 
 $(document).ready ->
   Tool.initialize()

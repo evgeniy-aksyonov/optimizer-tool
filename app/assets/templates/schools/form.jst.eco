@@ -6,15 +6,15 @@
 		<input type="text" name="title" id="new_school_title">
 	</div>
 
-	<div class="students-staff-wrapper">
+	<div class="students-teachers-wrapper">
 		<div class="students-wrapper">
 			<label for="students">Students:</label>
 			<input type="text" name="students" id="students_count">
 		</div>
 
-		<div class="staff-wrapper">
-			<label for="staff">Staff:</label>
-			<input type="text" name="staff" id="staff_count">
+		<div class="teachers-wrapper">
+			<label for="teachers">Staff:</label>
+			<input type="text" name="teachers" id="teachers_count">
 		</div>
 	</div>
 

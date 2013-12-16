@@ -4,7 +4,12 @@ class Tool.Views.SchoolsIndex extends Backbone.View
 
   events:
     'submit #new_school': 'createSchool'
-  	# 'click a.form'      : 'formShow'
+    'click a.form'      : 'form'
+
+  form: ->
+    router = new Tool.Routers.Schools()
+    router.navigate('form', {trigger: true})
+    Backbone.history.navigate('form', {trigger: true})
 
   initialize: ->
   	# @collection.on('sync', @addAllSchools)
@@ -25,7 +30,11 @@ class Tool.Views.SchoolsIndex extends Backbone.View
   	
   createSchool: (event) ->
   	event.preventDefault()
-  	attributes = title: $('#new_school_title').val()
+  	attributes = 
+      title: $('#new_school_title').val()
+      students: $('#students_count').val()
+      staff: $('#staff_count').val()
+    # console.log attributes
   	@collection.create attributes,
   		wait: true
   		success: -> 
@@ -39,7 +48,5 @@ class Tool.Views.SchoolsIndex extends Backbone.View
   		for attribute, messages of errors
   			alert "#{attribute} #{message}" for message in messages
 
-  formShow: (e) ->
-    e.preventDefault()
-    alert "form show"
+  
 
