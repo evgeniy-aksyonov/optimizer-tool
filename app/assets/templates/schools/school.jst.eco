@@ -1,2 +1,4 @@
-<a href="#"><%= @school.get('title') %></a>
-<a class="delete" href="#">Delete</a>
+<td><a href="#"><%= @school.get('title') %></a></td>
+<td><%= @school.get('students') %></td>
+<td><%= @school.get('teachers') %></td>
+<td><a class="delete" href="#">Delete</a></td>

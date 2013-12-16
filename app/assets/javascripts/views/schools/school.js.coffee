@@ -1,7 +1,7 @@
 class Tool.Views.School extends Backbone.View
 
   template: JST['schools/school']
-  tagName: 'li'
+  tagName: 'tr'
   events: 
     'click a.delete' : 'destroy'
 

@@ -3,7 +3,8 @@ class Tool.Views.SchoolsIndex extends Backbone.View
   template: JST['schools/index']
 
   events:
-  	'submit #new_school': 'createSchool'
+    'submit #new_school': 'createSchool'
+  	# 'click a.form'      : 'formShow'
 
   initialize: ->
   	# @collection.on('sync', @addAllSchools)
@@ -37,4 +38,8 @@ class Tool.Views.SchoolsIndex extends Backbone.View
   		errors = $.parseJSON(response.responseText).errors
   		for attribute, messages of errors
   			alert "#{attribute} #{message}" for message in messages
+
+  formShow: (e) ->
+    e.preventDefault()
+    alert "form show"
 
