@@ -7,7 +7,7 @@ class Tool.Views.SchoolsIndex extends Backbone.View
     'click a.form'      : 'form'
 
   form: ->
-    router = new Tool.Routers.Schools()
+    router = new Tool.Routers.MainRouter()
     router.navigate('form', {trigger: true})
     Backbone.history.navigate('form', {trigger: true})
 

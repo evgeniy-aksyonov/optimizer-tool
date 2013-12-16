@@ -1,6 +1,16 @@
 <h2>Schools</h2>
 
-<table id="schools"></table>
+<table id="schools" class="table table-hover table-bordered table-striped">
+	<thead>
+    <tr>
+      <th>Title</th>
+      <th>Students</th>
+      <th>Teachers</th>
+      <th>Delete school</th>
+    </tr>
+  </thead>
+
+</table>
 <div id="form_container"></div>
 
 <a href="/#form" class="form">Form</a>
