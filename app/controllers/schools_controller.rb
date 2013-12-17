@@ -24,6 +24,6 @@ class SchoolsController < ApplicationController
 	private
 
   def school_params
-    params.permit(:title)
+    params.permit(:title, :students, :teachers)
   end
 end
