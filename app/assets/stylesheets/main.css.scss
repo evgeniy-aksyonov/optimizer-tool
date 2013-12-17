@@ -31,9 +31,18 @@ body {
 				overflow: hidden;
 			}
 
-			.students-wrapper, .teachers-wrapper{
+			.students-wrapper, .teachers-wrapper {
 				width: 50%;
 				float: left;
+
+				input {
+					width: 92%;
+				}
+			}
+
+			.salary-wrapper {
+				width: 50%;
+				float: right;
 
 				input {
 					width: 92%;

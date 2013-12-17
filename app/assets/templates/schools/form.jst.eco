@@ -22,7 +22,14 @@
 				<input type="text" name="teachers" id="teachers_count" placeholder="Enter number">
 			</div>
 		</div>
+
+		<div class="salary-wrapper">
+			<div class="form-group">
+				<label for="salary">Average salary:</label>
+				<input type="text" name="salary" id="salary" placeholder="Enter number">
+			</div>
+		</div>
 	</div>
 
-	<button type="submit" class="btn btn-success">Add school</button>
+	<button type="submit" class="btn btn-successs">Add school</button>
 </form>
