@@ -35,4 +35,7 @@
 	
 </form>
 
-<a href="/">Home</a>
+<div class="link_wrapper">
+  <a href="/#schools_index" class="schools_index btn btn-default" role="button">Back</a>
+	<a href="/" class="btn btn-default" role="button">Home</a>
+</div>

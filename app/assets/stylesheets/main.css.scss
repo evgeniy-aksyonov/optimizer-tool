@@ -1,6 +1,7 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// @import 'bootstrap';
 @import 'bootstrap';
 
 
@@ -10,15 +11,28 @@ body {
 	// font-family: 'Helvetica', sans-serif;
 	padding: 10px 20px;
 
+	h1 a.link_to_main, h1 a.link_to_main:hover {
+		text-decoration: none;
+	}
+
+	div.link_wrapper {
+		margin: 30px 0;
+	}
+
 	.btn-group-justified {
 		display: table;
 		width: 100%;
 		border-collapse: separate;
 		table-layout: fixed;
+		margin: 30px 0;
 	}
 
-	.form-links a {
-		display: table-cell;
+	.form-links.btn-group {
+		a {
+			display: table-cell;
+			font-size: 18px;
+			line-height: 28px;
+		}
 	}
 
 	.form-inner {

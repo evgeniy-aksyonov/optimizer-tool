@@ -1,5 +1,10 @@
 <h2>Add new student</h2>
 
+<div class="link_wrapper">
+  <a href="/#students_index" class="students_index btn btn-default" role="button">Back</a>
+	<a href="/" class="btn btn-default" role="button">Home</a>
+</div>
+
 <form id="new_student">
 	<div class="firstname-wrapper">
 		<div class="form-group">
@@ -19,4 +24,7 @@
 	
 </form>
 
-<a href="/">Home</a>
+<div class="link_wrapper">
+  <a href="/#students_index" class="students_index btn btn-default" role="button">Back</a>
+	<a href="/" class="btn btn-default" role="button">Home</a>
+</div>

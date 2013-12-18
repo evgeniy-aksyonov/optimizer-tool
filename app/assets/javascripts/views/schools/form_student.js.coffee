@@ -7,8 +7,8 @@ class Tool.Views.FormStudent extends Backbone.View
   	'submit #new_student': 'createStudent'
 
   render: ->
-  	@$el.html(@template())
-  	@
+    $(@el).html(@template())
+    @
 
   createStudent: (event) ->
   	collection = new Tool.Collections.Students()

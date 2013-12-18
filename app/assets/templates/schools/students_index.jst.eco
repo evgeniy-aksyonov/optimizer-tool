@@ -1,0 +1,24 @@
+<h2>Students</h2>
+
+<div class="link_wrapper">
+  <a href="/#form_student" class="form_student btn btn-default" role="button">Add student</a>
+  <a href="/" class="btn btn-default">Home</a>
+</div>
+
+<table id="students" class="table table-hover table-bordered table-striped">
+	<thead>
+    <tr>
+      <th>Id</th>
+      <th>Firstname</th>
+      <th>School_id</th>
+      <th>Delete student</th>
+    </tr>
+  </thead>
+
+</table>
+
+<div class="link_wrapper">
+  <a href="/#form_student" class="form_student btn btn-default" role="button">Add student</a>
+  <a href="/" class="btn btn-default">Home</a>
+</div>
+

@@ -1,29 +1,37 @@
 class Tool.Routers.MainRouter extends Backbone.Router
 	routes:
-		''               : 'index'
-		'form'           : 'form_school'
-		'student_form'   : 'form_student'
-		'teacher_form'   : 'form_teacher'
-		'schools/:id'    : 'show'
+		''                : 'main_page'
+		'schools_index'   : 'schools_index'
+		'students_index'  : 'students_index'
+		'teachers_index'  : 'teachers_index'
+		'form_school'     : 'form_school'
+		'form_student'    : 'form_student'
+		'form_teacher'    : 'form_teacher'
+		# 'schools/:id'     : 'show'
 
 	initialize: ->
-		@collection = new Tool.Collections.Schools()
 		@formSchoolView = new Tool.Views.FormSchool()
 		@formStudentView = new Tool.Views.FormStudent()
 		@formTeacherView = new Tool.Views.FormTeacher()
-		@collection.fetch()
 
-	index: ->
-		view = new Tool.Views.SchoolsIndex(collection: @collection)
-		$('#container').html( view.render().el )
+	main_page: ->
+		view = new Tool.Views.MainPage()
+		$('#container').html(view.render().el)
 
-	show: (id) ->
-		console.log "school view #{id}"
-		# schools = new Tool.Models.Schools
-		# schools.fetch()
+	schools_index: ->
+		view = new Tool.Views.SchoolsIndex()
+		$('#container').html(view.render().el)
 
+	students_index: ->
+		view = new Tool.Views.StudentsIndex()
+		$('#container').html(view.render().el)
+
+	teachers_index: ->
+		view = new Tool.Views.TeachersIndex()
+		$('#container').html(view.render().el)
+	
 	form_school: ->
-		$('#form').html(@formSchoolView.render().el)
+		$('#form_school').html(@formSchoolView.render().el)
 
 	form_student: ->
 		$('#form_student').html(@formStudentView.render().el)
