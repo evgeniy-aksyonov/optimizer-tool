@@ -1,16 +1,17 @@
 class Tool.Routers.MainRouter extends Backbone.Router
 	routes:
-		''            : 'index'
-		'form'        : 'form'
-		'schools/:id' : 'show'
+		''               : 'index'
+		'form'           : 'form_school'
+		'student_form'   : 'form_student'
+		'schools/:id'    : 'show'
 
 	initialize: ->
 		@collection = new Tool.Collections.Schools()
-		@formView = new Tool.Views.Form()
+		@formSchoolView = new Tool.Views.FormSchool()
+		@formStudentView = new Tool.Views.FormStudent()
 		@collection.fetch()
 
 	index: ->
-		console.log 'index page'
 		view = new Tool.Views.SchoolsIndex(collection: @collection)
 		$('#container').html( view.render().el )
 
@@ -19,5 +20,8 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		# schools = new Tool.Models.Schools
 		# schools.fetch()
 
-	form: ->
-		$('#form').html(@formView.render().el)
+	form_school: ->
+		$('#form').html(@formSchoolView.render().el)
+
+	form_student: ->
+		$('#form_student').html(@formStudentView.render().el)

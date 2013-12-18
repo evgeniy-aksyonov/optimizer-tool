@@ -1,0 +1,20 @@
+<h2>Add new student</h2>
+
+<form id="new_student">
+	<div class="firstname-wrapper">
+		<div class="form-group">
+			<label for="firstname">Firstname:</label>
+			<input type="text" name="firstname" id="new_student_firstname" placeholder="Enter firstname">
+		</div>
+	</div>
+
+	<div class="school_id-wrapper">
+		<div class="form-group">
+			<label for="school_id">School id:</label>
+			<input type="text" name="school_id" id="new_student_school_id" placeholder="Enter school_id">
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-success">Add student</button>
+	
+</form>

@@ -2,19 +2,29 @@ class Tool.Views.SchoolsIndex extends Backbone.View
 
   template: JST['schools/index']
 
+  initialize: ->
+    # router = new Tool.Routers.MainRouter()
+    # @collection.on('sync', @addAllSchools)
+    @collection.on('add', @addOneSchool, this)
+    @collection.on('reset', @addOneSchool)
+
   events:
     # 'submit #new_school': 'createSchool'
-    'click a.form'      : 'form'
+    'click a.form_school'   : 'form_school'
+    'click a.form_student'  : 'form_student'
+    'click a.form_teacher'  : 'form_teacher'
 
-  form: ->
+  form_school: ->
     router = new Tool.Routers.MainRouter()
-    router.navigate('form', {trigger: true})
-    Backbone.history.navigate('form', {trigger: true})
+    router.navigate('form_school', {trigger: true})
 
-  initialize: ->
-  	# @collection.on('sync', @addAllSchools)
-  	@collection.on('add', @addOneSchool, this)
-  	@collection.on('reset', @addOneSchool)
+  form_student: ->
+    router = new Tool.Routers.MainRouter()
+    router.navigate('form_student', {trigger: true})
+
+  form_teacher: ->
+    router = new Tool.Routers.MainRouter()
+    router.navigate('form_teacher', {trigger: true})
 
   render: ->
   	$(@el).html(@template(schools: @collection))
@@ -28,25 +38,3 @@ class Tool.Views.SchoolsIndex extends Backbone.View
   	view = new Tool.Views.School(model: school)
   	@$('#schools').append(view.render().el)
   	
-  # createSchool: (event) ->
-  # 	event.preventDefault()
-  # 	attributes = 
-  #     title: $('#new_school_title').val()
-  #     students: $('#students_count').val()
-  #     staff: $('#staff_count').val()
-  #   # console.log attributes
-  # 	@collection.create attributes,
-  # 		wait: true
-  # 		success: -> 
-  # 			# alert(attributes.title + " was created successfully!")
-  # 			$('#new_school')[0].reset()
-  # 		error: @handleError
-
-  # handleError: (school, response) ->
-  # 	if response.status == 422
-  # 		errors = $.parseJSON(response.responseText).errors
-  # 		for attribute, messages of errors
-  # 			alert "#{attribute} #{message}" for message in messages
-
-  
-

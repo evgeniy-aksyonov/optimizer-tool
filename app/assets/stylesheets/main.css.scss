@@ -10,6 +10,17 @@ body {
 	// font-family: 'Helvetica', sans-serif;
 	padding: 10px 20px;
 
+	.btn-group-justified {
+		display: table;
+		width: 100%;
+		border-collapse: separate;
+		table-layout: fixed;
+	}
+
+	.form-links a {
+		display: table-cell;
+	}
+
 	.form-inner {
 		width: 600px;
 		margin: 0 auto;
@@ -49,7 +60,7 @@ body {
 				}
 			}
 
-			.title-wrapper {
+			.title-wrapper, .firstname-wrapper {
 				margin-bottom: 5px;
 
 				input {
