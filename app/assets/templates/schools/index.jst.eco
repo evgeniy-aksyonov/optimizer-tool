@@ -3,6 +3,7 @@
 <table id="schools" class="table table-hover table-bordered table-striped">
 	<thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Students</th>
       <th>Teachers</th>
