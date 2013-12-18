@@ -9,7 +9,6 @@ class Tool.Views.SchoolsIndex extends Backbone.View
     @collection.on('reset', @addOneSchool)
 
   events:
-    # 'submit #new_school': 'createSchool'
     'click a.form_school'   : 'form_school'
     'click a.form_student'  : 'form_student'
     'click a.form_teacher'  : 'form_teacher'

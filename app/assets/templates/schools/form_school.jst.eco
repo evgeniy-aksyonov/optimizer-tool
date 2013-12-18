@@ -34,3 +34,5 @@
 	<button type="submit" class="btn btn-success">Add school</button>
 	
 </form>
+
+<a href="/">Home</a>

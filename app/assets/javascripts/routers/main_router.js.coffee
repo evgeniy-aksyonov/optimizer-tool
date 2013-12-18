@@ -3,12 +3,14 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		''               : 'index'
 		'form'           : 'form_school'
 		'student_form'   : 'form_student'
+		'teacher_form'   : 'form_teacher'
 		'schools/:id'    : 'show'
 
 	initialize: ->
 		@collection = new Tool.Collections.Schools()
 		@formSchoolView = new Tool.Views.FormSchool()
 		@formStudentView = new Tool.Views.FormStudent()
+		@formTeacherView = new Tool.Views.FormTeacher()
 		@collection.fetch()
 
 	index: ->
@@ -25,3 +27,6 @@ class Tool.Routers.MainRouter extends Backbone.Router
 
 	form_student: ->
 		$('#form_student').html(@formStudentView.render().el)
+
+	form_teacher: ->
+		$('#form_teacher').html(@formTeacherView.render().el)

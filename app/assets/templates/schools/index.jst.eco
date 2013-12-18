@@ -16,7 +16,7 @@
 <div class="form-links btn-group btn-group-justified">
   <a href="/#form" class="form_school btn btn-default" role="button">Add school</a>
   <a href="/#student_form" class="form_student btn btn-default" role="button">Add student</a>
-  <a href="/#form2" class="btn btn-default" role="button">Add teacher</a>
+  <a href="/#teacher_form" class="form_teacher btn btn-default" role="button">Add teacher</a>
 </div>
 
 
