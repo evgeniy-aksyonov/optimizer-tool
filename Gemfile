@@ -47,3 +47,8 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'backbone-on-rails'
 gem 'rails_12factor', group: :production
+
+# Faking data
+gem 'populator'
+gem 'faker'
+
