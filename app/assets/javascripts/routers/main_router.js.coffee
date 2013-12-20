@@ -1,18 +1,22 @@
 class Tool.Routers.MainRouter extends Backbone.Router
 	routes:
-		''                : 'main_page'
-		'schools_index'   : 'schools_index'
-		'students_index'  : 'students_index'
-		'teachers_index'  : 'teachers_index'
-		'form_school'     : 'form_school'
-		'form_student'    : 'form_student'
-		'form_teacher'    : 'form_teacher'
+		''                          : 'main_page'
+		'schools_index'             : 'schools_index'
+		'students_index'            : 'students_index'
+		'teachers_index'            : 'teachers_index'
+		'form_school'               : 'form_school'
+		'form_student'              : 'form_student'
+		'form_teacher'              : 'form_teacher'
+		'school_description/:id'    : 'school_description'
 		# 'schools/:id'     : 'show'
 
 	initialize: ->
 		@formSchoolView = new Tool.Views.FormSchool()
 		@formStudentView = new Tool.Views.FormStudent()
 		@formTeacherView = new Tool.Views.FormTeacher()
+
+	school_description: (id) ->
+		console.log 'desc from router ' + id
 
 	main_page: ->
 		view = new Tool.Views.MainPage()

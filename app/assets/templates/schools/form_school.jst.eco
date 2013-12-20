@@ -12,7 +12,7 @@
 		<div class="students-wrapper">
 			<div class="form-group">
 				<label for="students">Students:</label>
-				<input type="text" name="students" id="students_count" placeholder="Enter number" disabled>
+				<input type="text" name="students" id="students_count" placeholder="Enter number">
 		  </div>	
 		</div>
 
