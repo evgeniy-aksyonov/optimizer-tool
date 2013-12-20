@@ -12,7 +12,7 @@ class Tool.Views.School extends Backbone.View
     @model.on('reset', @render, this)
     @model.on('destroy', @remove, this)
 
-  showSchoolDetails: ->
+  showSchoolDetails: (id) ->
     console.log 'desc fro view'
     router = new Tool.Routers.MainRouter()
     router.navigate('school_description', {trigger: true})

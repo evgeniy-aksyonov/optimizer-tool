@@ -16,7 +16,9 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		@formTeacherView = new Tool.Views.FormTeacher()
 
 	school_description: (id) ->
-		console.log 'desc from router ' + id
+		console.log "desc from router #{id}"
+		view = new Tool.Views.SchoolDescription()
+		$('#container').html(view.render().el)
 
 	main_page: ->
 		view = new Tool.Views.MainPage()
