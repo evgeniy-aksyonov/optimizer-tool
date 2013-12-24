@@ -10,12 +10,12 @@ class School < ActiveRecord::Base
 		require 'faker'
 
 		500.times do # how to pass params[:students] instead of hardcoding?
-			Student.create :firstname => Faker::Name.name, :school_id => self.id
+			Student.create :firstname => Faker::Name.name, :grade => [*9..12].sample, :school_id => self.id
 			# puts "HELLO #{self.id}, #{self.studcount} HELLO"
 		end
 
 		15.times do
-			Teacher.create :firstname => Faker::Name.name, :school_id => self.id
+			Teacher.create :firstname => Faker::Name.name, :fulltime => [true, false].sample, :school_id => self.id
 		end
 
 		5.times do

@@ -1,4 +1,5 @@
 <td><%= @student.get('id') %></td>
 <td><a href="#"><%= @student.get('firstname') %></a></td>
 <td><p><%= @student.attributes.school_id %></p></td>
+<td><p><%= @student.attributes.grade %></p></td>
 <td><a class="delete" href="#">Delete</a></td>

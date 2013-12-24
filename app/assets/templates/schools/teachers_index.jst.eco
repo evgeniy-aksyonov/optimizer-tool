@@ -11,6 +11,7 @@
       <th>Id</th>
       <th>Firstname</th>
       <th>School_id</th>
+      <th>Fulltime</th>
       <th>Delete teacher</th>
     </tr>
   </thead>
