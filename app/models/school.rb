@@ -1,6 +1,6 @@
 class School < ActiveRecord::Base
-	has_many :students
-	has_many :teachers
+	has_many :students, dependent: :destroy
+	has_many :teachers, dependent: :destroy
 	validates_presence_of :title
 
 	after_create :generate_people
@@ -8,7 +8,7 @@ class School < ActiveRecord::Base
 	def generate_people
 		require 'faker'
 
-		10.times do # how to pass params[:students] instead of hardcoding?
+		500.times do # how to pass params[:students] instead of hardcoding?
 			Student.create :firstname => Faker::Name.name, :school_id => self.id
 			# puts "HELLO #{self.id}, #{self.studcount} HELLO"
 		end
