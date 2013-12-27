@@ -15,7 +15,7 @@ class School < ActiveRecord::Base
 		end
 
 		15.times do
-			Teacher.create :firstname => Faker::Name.name, :fulltime => [true, false].sample, :school_id => self.id
+			Teacher.create :firstname => Faker::Name.name, :salary => [*40..80].sample, :fulltime => [true, false].sample, :school_id => self.id
 		end
 
 		5.times do
