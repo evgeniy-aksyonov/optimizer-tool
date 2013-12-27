@@ -24,6 +24,6 @@ class TeachersController < ApplicationController
 	private
 
   def teacher_params
-    params.permit(:firstname, :school_id, :fulltime)
+    params.require(:teacher).permit(:firstname, :school_id, :salary, :fulltime)
   end
 end
