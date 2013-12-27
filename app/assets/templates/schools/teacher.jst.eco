@@ -2,5 +2,5 @@
 <td><a href="#"><%= @teacher.get('firstname') %></a></td>
 <td><p><%= @teacher.attributes.school_id %></p></td>
 <td><p><%= @teacher.attributes.fulltime %></p></td>
-<td><p><%= @teacher.attributes.salary %></p></td>
+<!-- <td><p><%= @teacher.attributes.salary %></p></td> -->
 <td><a class="delete" href="#">Delete</a></td>
