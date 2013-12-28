@@ -2,6 +2,7 @@ class Tool.Routers.MainRouter extends Backbone.Router
 	routes:
 		''                          : 'main_page'
 		'schools_index'             : 'schools_index'
+		'students_index'            : 'students_index'
 		'teachers_index'            : 'teachers_index'
 		'form_school'               : 'form_school'
 		'form_student'              : 'form_student'
