@@ -1,7 +1,7 @@
 class Tool.Routers.MainRouter extends Backbone.Router
 	routes:
 		''                          : 'main_page'
-		'schools_index'             : 'schools_index'
+		'schools_index'	            : 'schools_index'
 		'students_index'            : 'students_index'
 		'teachers_index'            : 'teachers_index'
 		'form_school'               : 'form_school'
@@ -37,10 +37,10 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		$('#container').html(view.render().el)
 	
 	form_school: ->
-		$('#form_school').html(@formSchoolView.render().el)
+		$('#container').html(@formSchoolView.render().el)
 
 	form_student: ->
-		$('#form_student').html(@formStudentView.render().el)
+		$('#container').html(@formStudentView.render().el)
 
 	form_teacher: ->
-		$('#form_teacher').html(@formTeacherView.render().el)
+		$('#container').html(@formTeacherView.render().el)
