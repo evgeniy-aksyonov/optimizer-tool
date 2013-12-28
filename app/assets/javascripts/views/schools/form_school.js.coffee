@@ -15,8 +15,11 @@ class Tool.Views.FormSchool extends Backbone.View
   	collection.fetch()
   	event.preventDefault()
   	attributes = 
-      title: $('#new_school_title').val()
-      studcount: $('#students_count').val()
+			title: $('#new_school_title').val()
+			people_count:
+				students: $('#students_count').val()
+				teachers: $('#teachers_count').val()
+
       # students: +$('#students_count').val()
       # teachers: +$('#teachers_count').val()
   	collection.create attributes,

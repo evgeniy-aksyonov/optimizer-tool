@@ -19,7 +19,7 @@
 		<div class="teachers-wrapper">
 			<div class="form-group">
 				<label for="teachers">Staff:</label>
-				<input type="text" name="teachers" id="teachers_count" placeholder="Enter number" disabled>
+				<input type="text" name="teachers" id="teachers_count" placeholder="Enter number">
 			</div>
 		</div>
 

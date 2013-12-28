@@ -11,6 +11,8 @@ class SchoolsController < ApplicationController
 
 	def create
 		respond_with School.create(school_params)
+    #render json: school_params
+    #render json: params[:people_count]
 	end
 
 	def update
@@ -24,6 +26,6 @@ class SchoolsController < ApplicationController
 	private
 
   def school_params
-    params.require(:school).permit(:title, :studcount, :teachers)
+    params.require(:school).permit(:title).tap { |p| p[:people_count] = params[:people_count] }
   end
 end

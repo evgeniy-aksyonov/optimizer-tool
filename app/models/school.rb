@@ -6,21 +6,29 @@ class School < ActiveRecord::Base
 
 	after_create :generate_people
 
-	def generate_people
+	def people_count=(count)
+    @people_count=count
+  end
+
+  def people_count
+    @people_count
+  end
+
+  def number_of type
+    people_count[type].to_i
+  end
+
+  def generate_people
 		require 'faker'
 
-		500.times do # how to pass params[:students] instead of hardcoding?
+    number_of('students').times do
 			Student.create :firstname => Faker::Name.name, :grade => [*9..12].sample, :school_id => self.id
-			# puts "HELLO #{self.id}, #{self.studcount} HELLO"
 		end
 
-		15.times do
+    number_of('teachers').times do
 			Teacher.create :firstname => Faker::Name.name, :salary => [*40..80].sample, :fulltime => [true, false].sample, :school_id => self.id
 		end
 
-		5.times do
-			Staff.create :title => Faker::Name.title, :school_id => self.id
-		end
 	end
 
 end
