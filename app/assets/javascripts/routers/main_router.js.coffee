@@ -37,10 +37,10 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		$('#container').html(view.render().el)
 	
 	form_school: ->
-		$('#form_school').html(@formSchoolView.render().el)
+		$('#container').html(@formSchoolView.render().el)
 
 	form_student: ->
-		$('#form_student').html(@formStudentView.render().el)
+		$('#container').html(@formStudentView.render().el)
 
 	form_teacher: ->
-		$('#form_teacher').html(@formTeacherView.render().el)
+		$('#container').html(@formTeacherView.render().el)

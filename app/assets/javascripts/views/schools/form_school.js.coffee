@@ -21,13 +21,13 @@ class Tool.Views.FormSchool extends Backbone.View
       # teachers: +$('#teachers_count').val()
   	collection.create attributes,
   		wait: true
+			error: @handleError
+
   		success: -> 
-  			$('#new_school')[0].reset()
-  		error: @handleError
+				Tool.routers.main.navigate("/schools_index", true)
 
   handleError: (school, response) ->
   	if response.status == 422
   		errors = $.parseJSON(response.responseText).errors
   		for attribute, messages of errors
   			alert "#{attribute} #{message}" for message in messages
-  
