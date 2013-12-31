@@ -12,7 +12,7 @@
       <th>Firstname</th>
       <th>School_id</th>
       <th>Fulltime</th>
-      <!-- <th>Salary, $K</th> -->
+      <th>Salary, $K</th>
       <th>Delete teacher</th>
     </tr>
   </thead>
