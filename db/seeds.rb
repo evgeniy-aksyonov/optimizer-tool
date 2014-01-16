@@ -1,6 +1,13 @@
-School.create!(title: "Mountain High School", students: 180, teachers: 13)
-School.create!(title: "Long Island High School", students: 180, teachers: 13)
-School.create!(title: "Another High School", students: 180, teachers: 13)
-School.create!(title: "Test High School", students: 180, teachers: 13)
-School.create!(title: "Some High School", students: 180, teachers: 13)
-School.create!(title: "Another One High School", students: 180, teachers: 13)
+require 'csv'
+
+csv = {
+  'enrollment' => nil
+}
+
+csv.each do |key, val|
+  csv[key] = CSV.read('app/assets/csv/' + key + '.csv', {:headers => true, :return_headers => true, :header_converters => :symbol, :converters => :all} )
+end
+
+csv['enrollment'].each { |row|
+  puts row
+}

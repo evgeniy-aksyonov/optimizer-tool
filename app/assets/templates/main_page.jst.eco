@@ -1,11 +1,19 @@
 <h2>Main page</h2>
 
+<!-- <a href="/#enrollment_table" class="enroll">Enrollment table</a> -->
+<a href="/#enrollment_table" class="enrollment_table btn btn-default" role="button">Enroll</a>
+
 <div class="form-links btn-group btn-group-justified">
   <a href="/#schools_index" class="schools_index btn btn-default" role="button">SCHOOLS</a>
-  <!-- <a href="/#student_form" class="form_student btn btn-default" role="button">STUDENTS</a> -->
   <a href="/#students_index" class="students_index btn btn-default" role="button">STUDENTS</a>
   <a href="/#teachers_index" class="teachers_index btn btn-default" role="button">TEACHERS</a>
 </div>
+
+<!-- <ul class="form-links btn-group btn-group-justified">
+  <li><a href="/#schools_index" class="schools_index btn btn-default" role="button">SCHOOLS</a></li>
+  <li><a href="/#students_index" class="students_index btn btn-default" role="button">STUDENTS</a></li>
+ <li><a href="/#teachers_index" class="teachers_index btn btn-default" role="button">TEACHERS</a></li>
+</ul> -->
 
 <div id="form_container"></div>
 

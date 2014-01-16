@@ -9,9 +9,10 @@ class Tool.Views.MainPage extends Backbone.View
     # @collection.on('reset', @addOneSchool)
 
   events:
-    'click a.schools_index'  : 'schools_index'
-    'click a.students_index' : 'students_index'
-    'click a.teachers_index' : 'teachers_index'
+    'click a.enrollment_table'   : 'enrollment_table'
+    'click a.schools_index'      : 'schools_index'
+    'click a.students_index'     : 'students_index'
+    'click a.teachers_index'     : 'teachers_index'
 
   # form_school: ->
   #   router = new Tool.Routers.MainRouter()
@@ -36,6 +37,10 @@ class Tool.Views.MainPage extends Backbone.View
   teachers_index: ->
     router = new Tool.Routers.MainRouter()
     router.navigate('teachers_index', {trigger: true})
+
+  enrollment_table: ->
+    router = new Tool.Routers.MainRouter()
+    router.navigate('enrollment_table', {trigger: true})
 
   render: ->
   	$(@el).html(@template())

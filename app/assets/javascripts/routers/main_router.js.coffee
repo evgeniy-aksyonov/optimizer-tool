@@ -8,6 +8,7 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		'form_student'              : 'form_student'
 		'form_teacher'              : 'form_teacher'
 		'school_description/:id'    : 'school_description'
+		'enrollment_table'          : 'enrollment_table'
 		# 'schools/:id'     : 'show'
 
 	initialize: ->
@@ -44,3 +45,7 @@ class Tool.Routers.MainRouter extends Backbone.Router
 
 	form_teacher: ->
 		$('#container').html(@formTeacherView.render().el)
+
+	enrollment_table: ->
+		view = new Tool.Views.EnrollmentTable()
+		$('#container').html(view.render().el)
