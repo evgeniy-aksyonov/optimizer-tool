@@ -2,7 +2,7 @@
 <h3>TimeWise Resource Optimization Calculator</h3>
 <h4>TOOL 1: Linking Students, Class Size, Sections & FTE</h4>
 
-<div class="table-container">
+<!-- <div class="table-container">
 	<table class="fte-table table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
@@ -45,11 +45,67 @@
 			<tr><td>956</td><td>14</td><td>68</td><td>78.0</td><td>79.7</td><td>81.9</td><td>85.4</td><td>91.0</td><td>95.6</td></tr>
 		</tbody>
 	</table>
-</div>
+</div> -->
 
 <a href="/" class="btn btn-default">Home</a>
 
-<div onClick="this.contentEditable='true';">
-    lorem ipsum dolor lorem ipsum dolorlorem ipsum dolor
+<div class="table-container">
+	<table class="fte-table"></table>
 </div>
+    
+
+<script>
+
+	for (var i=0; i<23; i++) {
+	    var row = document.querySelector("table").insertRow(-1);
+	    for (var j=0; j<10; j++) {
+	        var letter = String.fromCharCode("A".charCodeAt(0)+j-1);
+	        row.insertCell(-1).innerHTML = i&&j ? "<input id='"+ letter+i +"'/>" : i||letter;
+	    }
+	}
+
+	var DATA={}, INPUTS=[].slice.call(document.querySelectorAll("input"));
+	var HEADERS = ['', 'Students', 'Class Size', 'Sections', '(7 out of 8)', '(6 out of 7)', '(5 out of 6)', '(4 out of 5)', '(6 out of 8)', '(5 out of 7)'];
+	INPUTS.forEach(function(elm) {
+	    elm.onfocus = function(e) {
+	        e.target.value = localStorage[e.target.id] || "";
+	    };
+	    elm.onblur = function(e) {
+	        localStorage[e.target.id] = e.target.value;
+	        computeAll();
+	    };
+	    var getter = function() {
+	        var value = localStorage[elm.id] || "";
+	        if (value.charAt(0) == "=") {
+	            with (DATA) return eval(value.substring(1));
+	        } else { return isNaN(parseFloat(value)) ? value : parseFloat(value); }
+	    };
+	    Object.defineProperty(DATA, elm.id, {get:getter});
+	    Object.defineProperty(DATA, elm.id.toLowerCase(), {get:getter});
+	});
+	(window.computeAll = function() {
+	    INPUTS.forEach(function(elm) { 
+	    	try {
+	    		if (elm.id.indexOf('C') === 0) {
+		    		elm.value = isNaN(parseFloat(DATA[elm.id])) ? DATA[elm.id] : Math.round(DATA[elm.id]); 
+	    		} else if (elm.id.indexOf('D') === 0 || elm.id.indexOf('E') === 0 || elm.id.indexOf('F') === 0 || elm.id.indexOf('F') === 0 || elm.id.indexOf('G') === 0 || elm.id.indexOf('H') === 0 || elm.id.indexOf('I') === 0) {
+	    			elm.value = isNaN(parseFloat(DATA[elm.id])) ? DATA[elm.id] : parseFloat(DATA[elm.id]).toFixed(1); 
+	    		} else {
+	    			elm.value = DATA[elm.id];
+	    		}
+		    } 
+	    	catch(e) {} 
+	  	});
+
+	})();
+
+	var headers_query = jQuery('table.fte-table tr').first().find('td');
+	for(var i=0; i<headers_query.length; i++) {
+		var target = $(headers_query[i]);
+		target.text(HEADERS[i]);
+		if (target.text().indexOf('(') + 1) {
+			target.html("FTEs Needed" + "<br>" + target.html());
+		}
+	}
+</script>
 
