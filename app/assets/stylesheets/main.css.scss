@@ -7,9 +7,12 @@
 
 // ==========================================================
 body {	
-	// background-color: #DBDBDB;
-	// font-family: 'Helvetica', sans-serif;
 	padding: 10px 20px;
+
+	a.enrollment_table {
+		width: 33%;
+		padding: 8px 2px;
+	}
 
 	h1 a.link_to_main, h1 a.link_to_main:hover {
 		text-decoration: none;
