@@ -15,6 +15,9 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		@formSchoolView = new Tool.Views.FormSchool()
 		@formStudentView = new Tool.Views.FormStudent()
 		@formTeacherView = new Tool.Views.FormTeacher()
+		# @headerView = new Tool.Views.Header()
+		# @contentView = new Tool.Views.Content()
+		# @footerView = new Tool.Views.Footer()
 
 	school_description: (id) ->
 		console.log "desc from router #{id}"
@@ -49,3 +52,9 @@ class Tool.Routers.MainRouter extends Backbone.Router
 	enrollment_table: ->
 		view = new Tool.Views.EnrollmentTable()
 		$('#container').html(view.render().el)
+
+	# swapView
+	# layoutViews: ->
+	# 	$('#header').html(@headerView.render().el)
+	# 	$('#content').html(@contentView.render().el)
+	# 	$('#footer').html(@footerView.render().el)
