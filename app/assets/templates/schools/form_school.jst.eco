@@ -1,21 +1,24 @@
 <h2>Add new school</h2>
 
-<form id="new_school">
-	<div class="title-wrapper">
-		<div class="form-group">
-			<label for="title">School:</label>
-			<input type="text" name="title" id="new_school_title" placeholder="Enter title">
+<form id="new_school" class="clearfix">
+	<div class="title-students-wrapper">
+		<div class="title-wrapper">
+			<div class="form-group">
+				<label for="title">School:</label>
+				<input type="text" name="title" id="new_school_title" placeholder="Enter title">
+			</div>
 		</div>
-	</div>
 
-	<div class="students-teachers-wrapper">
 		<div class="students-wrapper">
 			<div class="form-group">
 				<label for="students">Students:</label>
 				<input type="text" name="students" id="students_count" placeholder="Enter number">
 		  </div>	
 		</div>
+	</div>
 
+	<div class="teachers-salary-wrapper">
+		
 		<div class="teachers-wrapper">
 			<div class="form-group">
 				<label for="teachers">Staff:</label>
@@ -26,12 +29,12 @@
 		<div class="salary-wrapper">
 			<div class="form-group">
 				<label for="salary">Average salary:</label>
-				<input type="text" name="salary" id="salary" placeholder="Enter number" disabled>
+				<input type="text" name="salary" id="salary" placeholder="Enter number">
 			</div>
 		</div>
 	</div>
 
-	<button type="submit" class="btn btn-success">Add school</button>
+	<button type="submit" class="btn btn-success add-school">Add school</button>
 	
 </form>
 

@@ -19,7 +19,7 @@ body {
 	}
 
 	div.link_wrapper {
-		margin: 30px 0;
+		margin: 20px 0;
 	}
 
 	.btn-group-justified {
@@ -43,24 +43,18 @@ body {
 		margin: 0 auto;
 
 		form {
-			// font-size: 24px;
 
 			label {
 				font-weight: 200;
 				font-size: 18px;
 			}
 
-			.title-wrapper, .students-teachers-wrapper {
+			.title-wrapper,
+			.students-wrapper,
+			.teachers-wrapper,
+			.salary-wrapper {
 				border-radius: 5px;
-			}
-
-			.students-teachers-wrapper {
-				clear: both;
-				overflow: hidden;
-			}
-
-			.students-wrapper, .teachers-wrapper {
-				width: 50%;
+				width: 100%;
 				float: left;
 
 				input {
@@ -68,29 +62,35 @@ body {
 				}
 			}
 
-			.salary-wrapper {
-				width: 50%;
+			.teachers-wrapper label,
+			.salary-wrapper label {
+				margin-left: 4%;
+			}
+
+			.teachers-wrapper input,
+			.salary-wrapper input {
 				float: right;
-
-				input {
-					width: 92%;
-				}
 			}
 
-			.title-wrapper, .firstname-wrapper {
+			.title-students-wrapper,
+			.teachers-salary-wrapper {
+				width: 48%;
+				float: left;
+			}
+
+			.title-students-wrapper {
+				margin-right: 4%;
+			}
+
+			.title-students-wrapper, .firstname-wrapper {
 				margin-bottom: 5px;
-
-				input {
-					width: 96%;
-				}
 			}
 
-			input[type="text"] {
-				// height: 20px;
-				// font-size: 18px;
+			button.add-school {
+				width: 100%;
 			}
-
 		}
+
 	}
 }
 

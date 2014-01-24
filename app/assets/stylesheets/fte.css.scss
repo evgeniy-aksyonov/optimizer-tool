@@ -1,50 +1,54 @@
-.fte-table .fte {
-	text-align: center;
-}
-
-div.table-container {
+div.fte-table-container {
 	margin: 30px auto;
+
+    .fte-table {
+        text-align: center;
+
+        li {
+            list-style: none;
+        }
+        li:before {
+            content: "✓ ";
+        }
+
+        input {
+            border: none;
+            width: 120px !important;
+            font-size: 14px;
+            padding: 2px;
+        }
+
+        input:hover {
+            background-color: #eee;
+        }
+
+        input:focus {
+            background-color: #ccf;
+        }
+
+        input:not(:focus) {
+            text-align: right;
+        }
+
+        table {
+            border-collapse: collapse;  
+        }
+
+        td {
+            border: 1px solid #999;
+            padding: 0;
+        }
+
+        tr:first-child td, td:first-child {
+            background-color: #ccc;
+            padding: 1px 3px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
 }
 
-li {
-    list-style: none;
-}
-li:before {
-    content: "✓ ";
-}
 
-input {
-    border: none;
-    width: 120px !important;
-    font-size: 14px;
-    padding: 2px;
-}
 
-input:hover {
-    background-color: #eee;
-}
 
-input:focus {
-    background-color: #ccf;
-}
-
-input:not(:focus) {
-    text-align: right;
-}
-
-table {
-    border-collapse: collapse;  
-}
-
-td {
-    border: 1px solid #999;
-    padding: 0;
-}
-
-tr:first-child td, td:first-child {
-    background-color: #ccc;
-    padding: 1px 3px;
-    font-weight: bold;
-    text-align: center;
-}
 
