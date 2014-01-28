@@ -12,6 +12,7 @@
       <th>Title</th>
       <th>Students</th>
       <th>Teachers</th>
+      <th>Salary/Benefits</th>
       <th>Delete school</th>
     </tr>
   </thead>
