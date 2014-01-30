@@ -1,17 +1,30 @@
-<h2>Main page</h2>
+<!-- <a href="/#enrollment_table" class="enrollment_table btn btn-default" role="button">Enrollment Table</a> -->
 
-<a href="/#enrollment_table" class="enrollment_table btn btn-default" role="button">Enrollment Table</a>
-
-<div class="form-links btn-group btn-group-justified">
+<!-- <div class="form-links btn-group btn-group-justified">
   <a href="/#schools_index" class="schools_index btn btn-default" role="button">SCHOOLS</a>
   <a href="/#students_index" class="students_index btn btn-default" role="button">STUDENTS</a>
   <a href="/#teachers_index" class="teachers_index btn btn-default" role="button">TEACHERS</a>
+</div> -->
+
+<a href="/#form_school" class="form_school btn btn-success btn-lg add-school-btn" role="button">Add School</a>
+
+<div class="jumbotron school-list-jumbo">
+  <h2>List of schools</h2>
 </div>
 
-<div id="form_container"></div>
+<div id="table_container">
+	<table id="schools" class="table table-hover table-bordered table-striped">
+		<thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Title</th>
+	      <th>Students</th>
+	      <th>Teachers</th>
+	      <th>Salary/Benefits</th>
+	      <th>Delete school</th>
+	    </tr>
+	  </thead>
 
-
-
-
-
+	</table>
+</div>
 

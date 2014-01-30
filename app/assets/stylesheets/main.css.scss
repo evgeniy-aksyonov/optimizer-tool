@@ -1,13 +1,37 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// @import 'bootstrap';
-@import 'bootstrap';
-
 
 // ==========================================================
 body {	
 	padding: 10px 20px;
+
+	//======= main page =========
+
+	.add-school-btn {
+		width: 33%;
+		margin-top: 20px;
+		min-width: 250px;
+	}
+
+	.school-list-jumbo {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin-top: 30px;
+
+		h2 {
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+
+	div#table_container {
+		table {
+			td {
+				vertical-align: middle;
+			}
+		}
+	}
 
 	a.enrollment_table {
 		width: 33%;
@@ -37,6 +61,12 @@ body {
 			font-size: 18px;
 			line-height: 28px;
 		}
+	}
+
+// ============ form ======
+
+	.glyphicon {
+		margin-right: 5px;
 	}
 
 	.form-inner {

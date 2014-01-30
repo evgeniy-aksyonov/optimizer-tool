@@ -2,48 +2,30 @@ class Tool.Views.MainPage extends Backbone.View
 
   template: JST['main_page']
 
+# old
   # initialize: ->
     # router = new Tool.Routers.MainRouter()
     # @collection.on('sync', @addAllSchools)
     # @collection.on('add', @addOneSchool, this)
     # @collection.on('reset', @addOneSchool)
 
-  events:
-    'click a.enrollment_table'   : 'enrollment_table'
-    'click a.schools_index'      : 'schools_index'
-    'click a.students_index'     : 'students_index'
-    'click a.teachers_index'     : 'teachers_index'
-
-  # form_school: ->
-  #   router = new Tool.Routers.MainRouter()
-  #   router.navigate('form_school', {trigger: true})
-
-  # form_student: ->
-  #   router = new Tool.Routers.MainRouter()
-  #   router.navigate('form_student', {trigger: true})
-
-  # form_teacher: ->
-  #   router = new Tool.Routers.MainRouter()
-  #   router.navigate('form_teacher', {trigger: true})
-
-  schools_index: ->
-    router = new Tool.Routers.MainRouter()
-    router.navigate('schools_index', {trigger: true})
-
-  students_index: ->
-    router = new Tool.Routers.MainRouter()
-    router.navigate('students_index', {trigger: true})
-
-  teachers_index: ->
-    router = new Tool.Routers.MainRouter()
-    router.navigate('teachers_index', {trigger: true})
-
-  enrollment_table: ->
-    router = new Tool.Routers.MainRouter()
-    router.navigate('enrollment_table', {trigger: true})
+# new
+  initialize: ->
+    @collection = new Tool.Collections.Schools()
+    @collection.fetch()
+    @collection.on('add', @addOneSchool, this)
+    @collection.on('reset', @addOneSchool)
 
   render: ->
-  	$(@el).html(@template())
-  	this
+    $(@el).html(@template(schools: @collection))
+    @collection.each(@addOneSchool)
+    this
+
+  addAllSchools: =>
+    @collection.each(@addOneSchool)
+
+  addOneSchool: (school) =>
+    view = new Tool.Views.School(model: school)
+    @$('#schools').append(view.render().el)
 
   	

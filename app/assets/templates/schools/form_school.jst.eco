@@ -39,6 +39,5 @@
 </form>
 
 <div class="link_wrapper">
-  <a href="/#schools_index" class="schools_index btn btn-default" role="button">Back</a>
-	<a href="/" class="btn btn-default" role="button">Home</a>
+	<a href="/" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
 </div>

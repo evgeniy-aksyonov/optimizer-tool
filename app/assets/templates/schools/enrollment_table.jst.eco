@@ -3,7 +3,7 @@
 <h4>TOOL 1: Linking Students, Class Size, Sections & FTE</h4>
 
 <div class="fte-table-container">
-  <table class="fte-table table table-bordered">
+  <table class="fte-table table table-hover table-bordered">
     <thead>
       <tr>
         <th rowspan="2"># Students</th>
