@@ -4,15 +4,28 @@
 	<div class="title-students-wrapper">
 		<div class="title-wrapper">
 			<div class="form-group">
-				<label for="title">School:</label>
-				<input type="text" name="title" id="new_school_title" placeholder="Enter title">
+				<label for="new_school_title">School:</label>
+				<input type="text" name="title" class="form-control" id="new_school_title" placeholder="Enter title">
 			</div>
 		</div>
 
 		<div class="students-wrapper">
 			<div class="form-group">
-				<label for="students">Students:</label>
-				<input type="text" name="students" id="students_count" placeholder="Enter number">
+				<label for="students_count">Students:</label>
+				<div class="input-group">
+	        <input type="text" name="students" class="form-control" id="students_count" placeholder="Number of students">
+	        <div class="input-group-btn">
+	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
+	          <ul class="dropdown-menu pull-right" role="menu">
+	            <li><p>Grade<p></li>
+	            <li class="divider"></li>
+	            <li>9</li>
+	            <li>10</li>
+	            <li>11</li>
+	            <li>12</li>
+	          </ul>
+	        </div><!-- /btn-group -->
+	      </div><!-- /input-group -->
 		  </div>	
 		</div>
 	</div>
@@ -20,16 +33,29 @@
 	<div class="teachers-salary-wrapper">
 		
 		<div class="teachers-wrapper">
-			<div class="form-group">
-				<label for="teachers">Staff:</label>
-				<input type="text" name="teachers" id="teachers_count" placeholder="Enter number">
+			<div class="form-group clearfix">
+				<label for="teachers_count">Teachers:</label>
+				<div class="input-group">
+	        <input type="text" name="teachers" class="form-control" id="teachers_count" placeholder="Number of teachers">
+	        <div class="input-group-btn">
+	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
+	          <ul class="dropdown-menu pull-right" role="menu">
+	            <li><p>Grade<p></li>
+	            <li class="divider"></li>
+	            <li>9</li>
+	            <li>10</li>
+	            <li>11</li>
+	            <li>12</li>
+	          </ul>
+	        </div><!-- /btn-group -->
+	      </div><!-- /input-group -->
 			</div>
 		</div>
 
 		<div class="salary-wrapper">
-			<div class="form-group">
+			<div class="form-group clearfix">
 				<label for="salary">Average salary:</label>
-				<input type="text" name="salary" id="salary" placeholder="Enter number">
+				<input type="text" name="salary" class="form-control" id="salary" placeholder="Salary">
 			</div>
 		</div>
 	</div>
