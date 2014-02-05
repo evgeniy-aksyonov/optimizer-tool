@@ -3,7 +3,16 @@
 <h4>TOOL 1: Linking Students, Class Size, Sections & FTE</h4>
 
 <div class="fte-table-container">
-  <table class="fte-table table table-hover table-bordered">
+  <table class="fte-table table table-bordered">
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
     <thead>
       <tr>
         <th rowspan="2"># Students</th>
@@ -48,28 +57,27 @@
 
 <script>
 	var tableEventsHandler = function () {
-		$('td').hover(function() {
-		    var t = parseInt($(this).index()) + 1;
-		    $('td:nth-child(' + t + ')').toggleClass('highlighted');
-		    $('th:nth-child(' + t + ')').toggleClass('highlighted');
-		},
-		function() {
-		    var t = parseInt($(this).index()) + 1;
-		    $('td:nth-child(' + t + ')').toggleClass('highlighted');
-		    $('th:nth-child(' + t + ')').toggleClass('highlighted');
-		});
 
-		$('th').hover(function() {
-		    var t = parseInt($(this).index()) + 1;
-		    $('td:nth-child(' + t + ')').toggleClass('highlighted');
-		    $('th:nth-child(' + t + ')').toggleClass('highlighted');
-		},
-		function() {
-		    var t = parseInt($(this).index()) + 1;
-		    $('td:nth-child(' + t + ')').toggleClass('highlighted');
-		    $('th:nth-child(' + t + ')').toggleClass('highlighted');
-		});
-	};
+    $("table").delegate('td','mouseover mouseleave', function(e) {
+      if (e.type == 'mouseover') {
+        $(this).parent().addClass("hover");
+        $("colgroup").eq($(this).index()).addClass("hover");
+      }
+      else {
+        $(this).parent().removeClass("hover");
+        $("colgroup").eq($(this).index()).removeClass("hover");
+      }
+    });
+
+    $("table").delegate('td','click', function() {
+
+      $('td').removeClass("higlighted");
+
+      $(this).parent().find($('td:nth-child(n+2):nth-child(-n+3)')).toggleClass("higlighted");
+      $(this).toggleClass("higlighted");
+    });
+
+  };
 
 	tableEventsHandler();
 	

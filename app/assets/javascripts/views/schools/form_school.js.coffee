@@ -19,9 +19,10 @@ class Tool.Views.FormSchool extends Backbone.View
       teachers: +$('#teachers_count').val()
       students: +$('#students_count').val()
       averagesalary: +$('#averagesalary').val()
+
       # people_count:
-      #   students: $('#students_count').val()
-      #   teachers: $('#teachers_count').val()
+      #   students: +$('#students_count').val()
+      #   teachers: +$('#teachers_count').val()
 
     collection.create attributes,
       wait: true
