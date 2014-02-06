@@ -17,3 +17,29 @@ div.fte-table-container {
 	font-weight: bold;
 }
 
+div.info-block-wrapper {
+  ul.info-block {
+    min-width: 900px;
+    width: 88%;
+    background-color: #e0f1ff;
+    border-radius: 10px;
+    height: 80px;
+    line-height: 80px;
+
+    li {
+      padding-left: 0px;
+      padding-right: 0px;
+      border-right: 2px rgb(204, 204, 204) solid;
+      height: 60px;
+      width: 15%;
+      text-align: center;
+      line-height: 60px;
+    }
+
+    li:first-child {
+      margin-left: 58px;
+      border-left: 2px rgb(204, 204, 204) solid;
+    }
+  }
+}
+

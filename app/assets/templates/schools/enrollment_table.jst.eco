@@ -53,7 +53,15 @@
   </table>
 </div>
 
-<a href="/" class="btn btn-default">Home</a>
+<div class="info-block-wrapper">
+  <ul class="info-block list-inline">
+    <li>Timetable</li><li>Teachers Have</li><li>Class Size</li><li>Teachers Needed</li><li>Total Salary</li><li>Teachers Set Aside</li>
+  </ul>
+</div>
+
+<div class="link_wrapper">
+  <a href="/" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
+</div>
 
 <script>
 	var tableEventsHandler = function () {
@@ -69,7 +77,7 @@
       }
     });
 
-    $("table").delegate('td','click', function() {
+    $("table").delegate('td:nth-child(n+4)','click', function() {
 
       $('td').removeClass("higlighted");
 
