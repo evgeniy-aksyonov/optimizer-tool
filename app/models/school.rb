@@ -5,20 +5,20 @@ class School < ActiveRecord::Base
 	has_one :schoolinfos, dependent: :destroy
 	validates_presence_of :title
 
-	# after_create :generate_people
+	after_create :generate_people
 	# after_create :generate_info
 
-	# def people_count=(count)
- #    @people_count=count
- #  end
+	def people_count=(count)
+    @people_count=count
+  end
 
- #  def people_count
- #    @people_count
- #  end
+  def people_count
+    @people_count
+  end
 
- #  def number_of type
- #    people_count[type].to_i
- #  end
+  def number_of type
+    people_count[type].to_i
+  end
 
   def generate_people
 		require 'faker'
