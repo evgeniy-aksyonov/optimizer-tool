@@ -18,12 +18,12 @@
         <th rowspan="2"># Students</th>
         <th rowspan="2">Class Size</th>
         <th rowspan="2">Sections</th>
-        <th rowspan="2"><p>7 out of 8</p><p>FTEs Needed</p></th>
-        <th rowspan="2"><p>6 out of 7</p><p>FTEs Needed</p></th>
-        <th rowspan="2"><p>5 out of 6</p><p>FTEs Needed</p></th>
-        <th rowspan="2"><p>4 out of 5</p><p>FTEs Needed</p></th>
-        <th rowspan="2"><p>6 out of 8</p><p>FTEs Needed</p></th>
-        <th rowspan="2"><p>5 out of 7</p><p>FTEs Needed</p></th>
+        <th rowspan="2"><p class="learning-units">7 out of 8</p><p>FTEs Needed</p></th>
+        <th rowspan="2"><p class="learning-units">6 out of 7</p><p>FTEs Needed</p></th>
+        <th rowspan="2"><p class="learning-units">5 out of 6</p><p>FTEs Needed</p></th>
+        <th rowspan="2"><p class="learning-units">4 out of 5</p><p>FTEs Needed</p></th>
+        <th rowspan="2"><p class="learning-units">6 out of 8</p><p>FTEs Needed</p></th>
+        <th rowspan="2"><p class="learning-units">5 out of 7</p><p>FTEs Needed</p></th>
       </tr>
     </thead>
 	  <tbody>
@@ -32,7 +32,7 @@
       <tr><td>956</td><td>33</td><td>29</td><td>33.1</td><td>33.8</td><td>34.8</td><td>36.2</td><td>38.6</td><td>40.6</td></tr>
       <tr><td>956</td><td>32</td><td>30</td><td>34.1</td><td>34.9</td><td>35.9</td><td>37.3</td><td>39.8</td><td>41.8</td></tr>
       <tr><td>956</td><td>31</td><td>31</td><td>35.2</td><td>36.0</td><td>37.0</td><td>38.5</td><td>41.1</td><td>43.2</td></tr>
-      <tr><td>956</td><td>30</td><td>32</td><td>36.4</td><td>37.2</td><td>38.2</td><td>39.8</td><td>42.5</td><td>44.6</td></tr>
+      <tr><td>956</td><td>30</td><td>32</td><td>36.4</td><td>37.2</td><td>38.2</td><td>39.8</td><td>42.5</td><td class="default-highlight">44.6</td></tr>
       <tr><td>956</td><td>29</td><td>33</td><td>37.7</td><td>38.5</td><td>39.6</td><td>41.2</td><td>44.0</td><td>46.2</td></tr>
       <tr><td>956</td><td>28</td><td>34</td><td>39.0</td><td>39.8</td><td>41.0</td><td>42.7</td><td>45.5</td><td>47.8</td></tr>
       <tr><td>956</td><td>27</td><td>35</td><td>40.5</td><td>41.3</td><td>42.5</td><td>44.3</td><td>47.2</td><td>49.6</td></tr>
@@ -55,7 +55,30 @@
 
 <div class="info-block-wrapper">
   <ul class="info-block list-inline">
-    <li>Timetable</li><li>Teachers Have</li><li>Class Size</li><li>Teachers Needed</li><li>Total Salary</li><li>Teachers Set Aside</li>
+    <li>
+      <p class="timetable">...</p>
+      <p class="category">Timetable</p>
+    </li>
+    <li>
+      <p>13</p>
+      <p class="category">Teachers Have</p>
+    </li>
+    <li>
+      <p class="class-size">...</p>
+      <p class="category">Class Size</p>
+    </li>
+    <li>
+      <p class="teachers-needed">...</p>
+      <p class="category">Teachers Needed</p>
+    </li>
+    <li>
+      <p>780000</p>
+      <p class="category">Total Salary</p>
+    </li>
+    <li>
+      <p>0</p>
+      <p class="category">Teachers Set Aside</p>
+    </li>
   </ul>
 </div>
 
@@ -64,6 +87,8 @@
 </div>
 
 <script>
+
+  // Hover function
 	var tableEventsHandler = function () {
 
     $("table").delegate('td','mouseover mouseleave', function(e) {
@@ -79,13 +104,42 @@
 
     $("table").delegate('td:nth-child(n+4)','click', function() {
 
-      $('td').removeClass("higlighted");
+      $('td').removeClass("highlighted");
 
-      $(this).parent().find($('td:nth-child(n+2):nth-child(-n+3)')).toggleClass("higlighted");
-      $(this).toggleClass("higlighted");
+      $(this).parent().find($('td:nth-child(n+2):nth-child(-n+3)')).toggleClass("highlighted");
+      $(this).toggleClass("highlighted");
+
+      InfoBlockHandler();
     });
 
+
+    $('.default-highlight').trigger('click');
+
   };
+
+  // Info-block function
+  function InfoBlockHandler () {
+
+    // info-block cells selectors
+    var cell_timetable = $('p.timetable'),
+        cell_class_size = $('p.class-size'),
+        cell_teachers_needed = $('p.teachers-needed');
+
+    // info-block variables
+    var ib_timetable = $('.fte-table th').eq($('table td.highlighted').last().index()).find('p.learning-units').text(),
+        // should be got from current school model info   
+        ib_teachers_have,
+        ib_class_size = $('.fte-table td.highlighted').first().html(),
+        ib_teachers_needed = Math.round(parseFloat($('.fte-table td.highlighted').last().html())),
+        // need to get average salary from school model
+        ib_total_salary,
+        ib_teachers_set_aside; // ?
+
+    // assigning values
+    cell_timetable.html(ib_timetable);
+    cell_class_size.html(ib_class_size);
+    cell_teachers_needed.html(ib_teachers_needed);
+  }
 
 	tableEventsHandler();
 	

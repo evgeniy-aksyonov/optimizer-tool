@@ -12,7 +12,7 @@ div.fte-table-container {
 }
 
 .hover { background-color: #eee; }
-.higlighted { 
+.highlighted { 
 	background-color: #FFFCBB;
 	color: red;
 	font-weight: bold;
@@ -32,10 +32,19 @@ div.info-block-wrapper {
       padding-left: 0px;
       padding-right: 0px;
       border-right: 2px rgb(204, 204, 204) solid;
-      height: 60px;
+      height: 100%;
       width: 15%;
       text-align: center;
       line-height: 60px;
+
+      p {
+        line-height: 16px;
+        margin-top: 16px;
+
+        &.category {
+          margin-top: 14px;
+        }
+      }
     }
 
     li:first-child {
