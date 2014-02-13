@@ -18,7 +18,7 @@ class Tool.Views.FormSchool extends Backbone.View
       title: $('#new_school_title').val()
       teachers: +$('#teachers_count').val()
       students: +$('#students_count').val()
-      averagesalary: +$('#averagesalary').val()
+      averagesalary: +$('#salary').val()
 
       # people_count:
       #   students: +$('#students_count').val()

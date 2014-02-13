@@ -1,8 +1,8 @@
 class School < ActiveRecord::Base
-	has_many :students, dependent: :destroy
-	has_many :teachers, dependent: :destroy
-	has_many :staffs, dependent: :destroy
-	has_one :schoolinfos, dependent: :destroy
+	# has_many :students, dependent: :destroy
+	# has_many :teachers, dependent: :destroy
+	# has_many :staffs, dependent: :destroy
+	# has_one :schoolinfos, dependent: :destroy
 	validates_presence_of :title
 
 	# after_create :generate_people
