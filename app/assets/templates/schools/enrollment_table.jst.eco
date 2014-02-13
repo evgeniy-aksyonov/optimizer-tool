@@ -87,60 +87,66 @@
 </div>
 
 <script>
+  
+  if (location.href.indexOf('enrollment_table') + 1 ) {
+    $('body').addClass('enrollment-table');
 
-  // Hover function
-	var tableEventsHandler = function () {
+    // Hover function
+  	var tableEventsHandler = function () {
 
-    $("table").delegate('td','mouseover mouseleave', function(e) {
-      if (e.type == 'mouseover') {
-        $(this).parent().addClass("hover");
-        $("colgroup").eq($(this).index()).addClass("hover");
-      }
-      else {
-        $(this).parent().removeClass("hover");
-        $("colgroup").eq($(this).index()).removeClass("hover");
-      }
-    });
+      $("table").delegate('td','mouseover mouseleave', function(e) {
+        if (e.type == 'mouseover') {
+          $(this).parent().addClass("hover");
+          $("colgroup").eq($(this).index()).addClass("hover");
+        }
+        else {
+          $(this).parent().removeClass("hover");
+          $("colgroup").eq($(this).index()).removeClass("hover");
+        }
+      });
 
-    $("table").delegate('td:nth-child(n+4)','click', function() {
+      $("table").delegate('td:nth-child(n+4)','click', function() {
 
-      $('td').removeClass("highlighted");
+        $('td').removeClass("highlighted");
 
-      $(this).parent().find($('td:nth-child(n+2):nth-child(-n+3)')).toggleClass("highlighted");
-      $(this).toggleClass("highlighted");
+        $(this).parent().find($('td:nth-child(n+2):nth-child(-n+3)')).toggleClass("highlighted");
+        $(this).toggleClass("highlighted");
 
-      InfoBlockHandler();
-    });
+        InfoBlockHandler();
+      });
 
 
-    $('.default-highlight').trigger('click');
+      $('.default-highlight').trigger('click');
 
-  };
+    };
 
-  // Info-block function
-  function InfoBlockHandler () {
+    // Info-block function
+    function InfoBlockHandler () {
 
-    // info-block cells selectors
-    var cell_timetable = $('p.timetable'),
-        cell_class_size = $('p.class-size'),
-        cell_teachers_needed = $('p.teachers-needed');
+      // info-block cells selectors
+      var cell_timetable = $('p.timetable'),
+          cell_class_size = $('p.class-size'),
+          cell_teachers_needed = $('p.teachers-needed');
 
-    // info-block variables
-    var ib_timetable = $('.fte-table th').eq($('table td.highlighted').last().index()).find('p.learning-units').text(),
-        // should be got from current school model info   
-        ib_teachers_have,
-        ib_class_size = $('.fte-table td.highlighted').first().html(),
-        ib_teachers_needed = Math.round(parseFloat($('.fte-table td.highlighted').last().html())),
-        // need to get average salary from school model
-        ib_total_salary,
-        ib_teachers_set_aside; // ?
+      // info-block variables
+      var ib_timetable = $('.fte-table th').eq($('table td.highlighted').last().index()).find('p.learning-units').text(),
+          // should be got from current school model info   
+          ib_teachers_have,
+          ib_class_size = $('.fte-table td.highlighted').first().html(),
+          ib_teachers_needed = Math.round(parseFloat($('.fte-table td.highlighted').last().html())),
+          // need to get average salary from school model
+          ib_total_salary,
+          ib_teachers_set_aside; // ?
 
-    // assigning values
-    cell_timetable.html(ib_timetable);
-    cell_class_size.html(ib_class_size);
-    cell_teachers_needed.html(ib_teachers_needed);
+      // assigning values
+      cell_timetable.html(ib_timetable);
+      cell_class_size.html(ib_class_size);
+      cell_teachers_needed.html(ib_teachers_needed);
+    }
+
+  	tableEventsHandler();
+  //end of main IF  
   }
-
-	tableEventsHandler();
+  
 	
 </script>

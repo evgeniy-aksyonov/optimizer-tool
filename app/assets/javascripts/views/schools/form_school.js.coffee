@@ -16,13 +16,13 @@ class Tool.Views.FormSchool extends Backbone.View
     event.preventDefault()
     attributes =
       title: $('#new_school_title').val()
-      # teachers: +$('#teachers_count').val()
-      # students: +$('#students_count').val()
-      # averagesalary: +$('#averagesalary').val()
+      teachers: +$('#teachers_count').val()
+      students: +$('#students_count').val()
+      averagesalary: +$('#averagesalary').val()
 
-      people_count:
-        students: +$('#students_count').val()
-        teachers: +$('#teachers_count').val()
+      # people_count:
+      #   students: +$('#students_count').val()
+      #   teachers: +$('#teachers_count').val()
 
     collection.create attributes,
       wait: true
