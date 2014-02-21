@@ -1,5 +1,5 @@
 <td><%= @school.get('id') %></td>
-<td><a href="/#school_description" class="school_title"><%= @school.get('title') %></a></td>
+<td><a href="/#school_description/<%= @school.get('id') %>" class="school_title"><%= @school.get('title') %></a></td>
 <td><p><%= @school.get('students') %></p></td>
 <td><p><%= @school.get('teachers') %></p></td>
 <td><p><%= @school.get('averagesalary') %></p></td>
