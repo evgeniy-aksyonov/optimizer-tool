@@ -27,7 +27,7 @@ class Tool.Views.FormSchool extends Backbone.View
       wait: true
       error: @handleError
 
-      success: -> 
+      success: ->
         Tool.routers.main.navigate("/", true)
 
   handleError: (school, response) ->

@@ -9,19 +9,20 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		'form_teacher'              : 'form_teacher'
 		'school_description/:id'    : 'school_description'
 		'enrollment_table'          : 'enrollment_table'
-		# 'schools/:id'     : 'show'
 
 	initialize: ->
 		@formSchoolView = new Tool.Views.FormSchool()
 		@formStudentView = new Tool.Views.FormStudent()
 		@formTeacherView = new Tool.Views.FormTeacher()
+		@schools = new Tool.Collections.Schools()
+		@schools.fetch()
 		# @headerView = new Tool.Views.Header()
 		# @contentView = new Tool.Views.Content()
 		# @footerView = new Tool.Views.Footer()
 
 	school_description: (id) ->
-		console.log "desc from router #{id}"
-		view = new Tool.Views.SchoolDescription()
+		school = @schools.get(id)
+		view = new Tool.Views.SchoolDescription({model: school})
 		$('#container').html(view.render().el)
 
 	main_page: ->

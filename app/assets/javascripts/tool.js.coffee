@@ -6,6 +6,7 @@ window.Tool =
   Views: {}
   Routers: {}
   routers: {}
+  Vent : _.clone(Backbone.Events)
 
   initialize: ->
   	this.routers.main = new Tool.Routers.MainRouter()
