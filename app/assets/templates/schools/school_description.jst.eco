@@ -76,14 +76,16 @@
       <p class="category">Teachers Needed</p>
     </li>
     <li>
-      <p class="total_salary">...</p>
-      <p class="category">Total Salary</p>
+      <p class="total_salary"><%= @school.attributes.teachers * @school.attributes.averagesalary %></p>
+      <p class="category">Total Salary($)</p>
     </li>
     <li>
       <p>0</p>
       <p class="category">Teachers Set Aside</p>
     </li>
   </ul>
+
+  <a href="/#report_generation" class="report-generate btn btn-lg btn-success" role="button">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 
 <div class="link_wrapper">

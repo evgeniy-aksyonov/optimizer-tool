@@ -21,10 +21,12 @@ div.fte-table-container {
 
 div.info-block-wrapper {
   ul.info-block {
+    display: inline-block;
     min-width: 900px;
     width: 88%;
     background-color: #e0f1ff;
     border-radius: 10px;
+    border: 2px #cccccc solid;
     height: 80px;
     line-height: 80px;
 
@@ -40,6 +42,11 @@ div.info-block-wrapper {
       p {
         line-height: 16px;
         margin-top: 16px;
+        font-size: 20px;
+
+        &:first-child {
+          font-weight: bold;
+        }
 
         &.category {
           margin-top: 14px;
@@ -50,6 +57,18 @@ div.info-block-wrapper {
     li:first-child {
       margin-left: 58px;
       border-left: 2px rgb(204, 204, 204) solid;
+    }
+  }
+
+  a.report-generate {
+    display: inline-block;
+    line-height: 2;
+    float: right;
+    padding: 18px 46px;
+    font-size: 20px;
+
+    span {
+      padding-left: 18px;
     }
   }
 }
