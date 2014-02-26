@@ -89,6 +89,21 @@ body {
 				float: left;
 			}
 
+			.students-wrapper,
+			.teachers-wrapper {
+				ul.dropdown-menu {
+
+					li {
+						padding: 1px 10px;
+
+						&:hover, &:active {
+							cursor: pointer;
+							background-color: whitesmoke;
+						}
+					}
+				}
+			}
+
 			.teachers-wrapper input,
 			.salary-wrapper input {
 				float: right;

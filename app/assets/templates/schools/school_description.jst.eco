@@ -6,6 +6,16 @@
 <h3>TimeWise Resource Optimization Calculator</h3>
 <h4>TOOL 1: Linking Students, Class Size, Sections & FTE</h4>
 
+<div class="sort_container">
+  <ul class="sort_by_grade pagination pagination-lg">
+    <li><a href="#">All</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+    <li><a href="#">11</a></li>
+    <li><a href="#">12</a></li>
+  </ul>
+</div>
+
 <div class="fte-table-container">
   <table class="fte-table table table-bordered">
     <colgroup></colgroup>
@@ -136,11 +146,10 @@
 
       // info-block variables
       var ib_timetable = $('.fte-table th').eq($('table td.highlighted').last().index()).find('p.learning-units').text(),
-          ib_teachers_have,
+          // ib_teachers_have,
           ib_class_size = $('.fte-table td.highlighted').first().html(),
           ib_teachers_needed = Math.round(parseFloat($('.fte-table td.highlighted').last().html())),
-          // need to get average salary from school model
-          ib_total_salary,
+          // ib_total_salary,
           ib_teachers_set_aside; // ?
 
       // assigning values

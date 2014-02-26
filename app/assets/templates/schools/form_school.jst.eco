@@ -16,7 +16,7 @@
 	        <input type="text" name="students" class="form-control" id="students_count" placeholder="Number of students">
 	        <div class="input-group-btn">
 	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
-	          <ul class="dropdown-menu pull-right" role="menu">
+	          <ul class="grades_dropdown dropdown-menu pull-right" role="menu">
 	            <li><p>Grade<p></li>
 	            <li class="divider"></li>
 	            <li>K</li>
@@ -50,7 +50,7 @@
 	        <input type="text" name="teachers" class="form-control" id="teachers_count" placeholder="Number of teachers">
 	        <div class="input-group-btn">
 	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
-	          <ul class="dropdown-menu pull-right" role="menu">
+	          <ul class="dropdown-menu dropdown-menu pull-right" role="menu">
 	            <li><p>Grade<p></li>
 	            <li class="divider"></li>
 	            <li>K</li>
