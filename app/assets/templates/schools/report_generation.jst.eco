@@ -1,1 +1,37 @@
 <h1>Report generated</h1>
+
+<div class="report-table-container">
+  <table class="report-table table table-bordered">
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <thead>
+      <tr>
+        <th rowspan="2">Grade</th>
+        <th rowspan="2">Timetable</th>
+        <th rowspan="2">Students</th>
+        <th rowspan="2">Class Size</th>
+        <th rowspan="2">Teachers Have</th>
+        <th rowspan="2">Needed</th>
+        <th rowspan="2">Salary + Benefits</th>
+        <th rowspan="2">Set Aside</th>
+      </tr>
+    </thead>
+	  <tbody>
+      <tr><th>9</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      <tr><th>10</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      <tr><th>11</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      <tr><th>12</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+	  </tbody>
+  </table>
+</div>
+
+<div class="link_wrapper">
+  <a href="/" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
+</div>
