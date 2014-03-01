@@ -7,13 +7,13 @@ class Tool.Views.SchoolsIndex extends Backbone.View
     # @collection.on('sync', @addAllSchools)
     @collection = new Tool.Collections.Schools()
     @collection.fetch()
-    @collection.on('add', @addOneSchool, this)
+    @collection.on('add', @addOneSchool, @)
     @collection.on('reset', @addOneSchool)
 
   render: ->
   	$(@el).html(@template(schools: @collection))
   	@collection.each(@addOneSchool)
-  	this
+  	@
 
   addAllSchools: =>
   	@collection.each(@addOneSchool)
