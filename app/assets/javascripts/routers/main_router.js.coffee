@@ -26,6 +26,7 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		$('#container').html(view.render().el)
 
 	school_description: (id) ->
+		# parseInt(str.split(str.match(/school_description\//))[1])
 		school = @schools.get(id)
 		view = new Tool.Views.SchoolDescription({model: school})
 		$('#container').html(view.render().el)

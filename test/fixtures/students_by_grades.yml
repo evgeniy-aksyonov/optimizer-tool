@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade_9: 1
+  grade_10: 1
+  grade_11: 1
+  grade_12: 1
+  school_id: 
+
+two:
+  grade_9: 1
+  grade_10: 1
+  grade_11: 1
+  grade_12: 1
+  school_id: 

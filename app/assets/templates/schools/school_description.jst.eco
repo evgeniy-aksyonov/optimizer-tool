@@ -8,7 +8,7 @@
 
 <div class="sort_container">
   <ul class="sort_by_grade pagination pagination-lg">
-    <li><a href="#">All</a></li>
+    <li class="active"><a href="#">All</a></li>
     <li><a href="#">9</a></li>
     <li><a href="#">10</a></li>
     <li><a href="#">11</a></li>

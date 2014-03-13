@@ -48,6 +48,13 @@
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
 	        <input type="text" name="teachers" class="form-control" id="teachers_count" placeholder="Number of teachers">
+	        <select name="grades" id="grades">
+	        	<option value="all">All</option>
+	        	<option value="9">9</option>
+	        	<option value="10">10</option>
+	        	<option value="11">11</option>
+	        	<option value="12">12</option>
+	        </select>
 	        <div class="input-group-btn">
 	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
 	          <ul class="dropdown-menu dropdown-menu pull-right" role="menu">
