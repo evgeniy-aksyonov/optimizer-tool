@@ -5,6 +5,7 @@ Tool::Application.routes.draw do
     resources :students
     resources :teachers
     resources :schoolinfos
+    resources :students_by_grade
   end
 
   root to: "main#index"
