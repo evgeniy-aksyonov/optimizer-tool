@@ -21,15 +21,21 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		# @contentView = new Tool.Views.Content()
 		# @footerView = new Tool.Views.Footer()
 
-	report_generation: ->
-		view = new Tool.Views.ReportGeneration()
-		$('#container').html(view.render().el)
+	report_generation: (id) ->
+		schools = new Tool.Collections.Schools()
+		schools.fetch success: ->
+			school = schools.get(id)
+			view = new Tool.Views.ReportGeneration({model: school})
+			$('#container').html(view.render().el)
+
+	
 
 	school_description: (id) ->
-		# parseInt(str.split(str.match(/school_description\//))[1])
-		school = @schools.get(id)
-		view = new Tool.Views.SchoolDescription({model: school})
-		$('#container').html(view.render().el)
+		schools = new Tool.Collections.Schools()
+		schools.fetch success: ->
+			school = schools.get(id)
+			view = new Tool.Views.SchoolDescription({model: school})
+			$('#container').html(view.render().el)
 
 	main_page: ->
 		view = new Tool.Views.MainPage()
