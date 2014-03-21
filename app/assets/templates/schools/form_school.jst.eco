@@ -13,28 +13,40 @@
 			<div class="form-group">
 				<label for="students_count">Students:</label>
 				<div class="input-group">
-	        <input type="text" name="students" class="form-control" id="students_count" placeholder="Number of students">
+	        <input type="text" name="students" class="form-control input-hider grade_K" id="" placeholder="K">
+	        <input type="text" name="students" class="form-control grade_all" id="" placeholder="all">
+	        <input type="text" name="students" class="form-control input-hider grade_1" id="" placeholder="grade 1">
+	        <input type="text" name="students" class="form-control input-hider grade_2" id="" placeholder="grade 2">
+	        <input type="text" name="students" class="form-control input-hider grade_3" id="" placeholder="grade 3">
+	        <input type="text" name="students" class="form-control input-hider grade_4" id="" placeholder="grade 4">
+	        <input type="text" name="students" class="form-control input-hider grade_5" id="" placeholder="grade 5">
+	        <input type="text" name="students" class="form-control input-hider grade_6" id="" placeholder="grade 6">
+	        <input type="text" name="students" class="form-control input-hider grade_7" id="" placeholder="grade 7">
+	        <input type="text" name="students" class="form-control input-hider grade_8" id="" placeholder="grade 8">
+	        <input type="text" name="students" class="form-control input-hider grade_9" id="" placeholder="grade 9">
+	        <input type="text" name="students" class="form-control input-hider grade_10" id="" placeholder="grade 10">
+	        <input type="text" name="students" class="form-control input-hider grade_11" id="" placeholder="grade 11">
+	        <input type="text" name="students" class="form-control input-hider grade_12" id="" placeholder="grade 12">
 	        <div class="input-group-btn">
-	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
-	          <ul class="grades_dropdown dropdown-menu pull-right" role="menu">
-	            <li><p>Grade<p></li>
-	            <li class="divider"></li>
-	            <li>K</li>
-	            <li>1</li>
-	            <li>2</li>
-	            <li>3</li>
-	            <li>4</li>
-	            <li>5</li>
-	            <li class="divider"></li>
-	            <li>6</li>
-	            <li>7</li>
-	            <li>8</li>
-	            <li class="divider"></li>
-	            <li>9</li>
-	            <li>10</li>
-	            <li>11</li>
-	            <li>12</li>
-	          </ul>
+	          <div class="select-style">
+						  <select>
+						    <option value="all">All</option>
+			        	<option value="K">K</option>
+			        	<option value="1">1</option>
+			        	<option value="2">2</option>
+			        	<option value="3">3</option>
+			        	<option value="4">4</option>
+			        	<option value="5">5</option>
+			        	<option value="6">6</option>
+			        	<option value="7">7</option>
+			        	<option value="8">8</option>
+			        	<option value="9">9</option>
+			        	<option value="10">10</option>
+			        	<option value="11">11</option>
+			        	<option value="12">12</option>
+						  </select>
+						  <span class="glyphicon glyphicon-chevron-down"></span>
+						</div>
 	        </div><!-- /btn-group -->
 	      </div><!-- /input-group -->
 		  </div>	
@@ -47,35 +59,27 @@
 			<div class="form-group clearfix">
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
-	        <input type="text" name="teachers" class="form-control" id="teachers_count" placeholder="Number of teachers">
-	        <select name="grades" id="grades">
-	        	<option value="all">All</option>
-	        	<option value="9">9</option>
-	        	<option value="10">10</option>
-	        	<option value="11">11</option>
-	        	<option value="12">12</option>
-	        </select>
+	        <input type="text" name="teachers" class="form-control grade_all" id="teachers_count" placeholder="Number of teachers">
 	        <div class="input-group-btn">
-	          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify"></span></button>
-	          <ul class="dropdown-menu dropdown-menu pull-right" role="menu">
-	            <li><p>Grade<p></li>
-	            <li class="divider"></li>
-	            <li>K</li>
-	            <li>1</li>
-	            <li>2</li>
-	            <li>3</li>
-	            <li>4</li>
-	            <li>5</li>
-	            <li class="divider"></li>
-	            <li>6</li>
-	            <li>7</li>
-	            <li>8</li>
-	            <li class="divider"></li>
-	            <li>9</li>
-	            <li>10</li>
-	            <li>11</li>
-	            <li>12</li>
-	          </ul>
+	          <div class="select-style">
+						  <select>
+						    <option value="all">All</option>
+			        	<option value="K">K</option>
+			        	<option value="1">1</option>
+			        	<option value="2">2</option>
+			        	<option value="3">3</option>
+			        	<option value="4">4</option>
+			        	<option value="5">5</option>
+			        	<option value="6">6</option>
+			        	<option value="7">7</option>
+			        	<option value="8">8</option>
+			        	<option value="9">9</option>
+			        	<option value="10">10</option>
+			        	<option value="11">11</option>
+			        	<option value="12">12</option>
+						  </select>
+						  <span class="glyphicon glyphicon-chevron-down"></span>
+						</div>
 	        </div><!-- /btn-group -->
 	      </div><!-- /input-group -->
 			</div>
@@ -96,3 +100,48 @@
 <div class="link_wrapper">
 	<a href="/" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
 </div>
+
+
+<script>
+  
+  if (location.href.indexOf('form_school') + 1 ) {
+
+    $('body').addClass('form_school');
+
+    var saved_input;
+
+    var sum = function(){
+
+	    var all_grades_inputs = $('.students-wrapper .input-group input[class*="grade_"]:not(.grade_all)');
+	    var all_input = $('.students-wrapper .input-group input.grade_all');
+	    var stud_overall_input_val = 0;
+
+    	for(var i=0; i<all_grades_inputs.length; i++) {
+				var current_input = all_grades_inputs[i];
+
+				if (current_input.name && current_input.className.indexOf("grade_all") < 0) {
+				  stud_overall_input_val += +current_input.value || 0;
+				}
+
+			}
+			all_input.val(stud_overall_input_val);
+    };
+
+    // students counter logic
+    $('.students-wrapper .input-group-btn .select-style select').on('change', function(){
+
+    	var select_value = $(this).val();
+
+			var	curr_input = $(this).closest("div.input-group").find("input.form-control:not(.input-hider)");
+			var curr_input_val = +curr_input.val() || 0;
+					saved_input = curr_input.attr('class').split(" ")[1];
+
+			curr_input.toggleClass('input-hider');
+			$(this).closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
+
+			sum();
+    });
+		
+  }
+
+</script>

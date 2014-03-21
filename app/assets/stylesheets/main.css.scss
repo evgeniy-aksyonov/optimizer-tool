@@ -89,7 +89,48 @@ body {
 				float: left;
 			}
 
-			.students-wrapper,
+			.students-wrapper .input-group-btn .select-style,
+			.teachers-wrapper .input-group-btn .select-style {
+				
+		    border: 1px solid #ccc;
+		    border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+		    width: 60px;
+		    overflow: hidden;
+		    background: #fafafa;
+				margin-left: -1px;
+						
+				span {
+					display: inline-block;
+					right: 30px;
+				}
+
+				select {
+					display: inline-block;
+			    padding: 6px 8px;
+			    width: 100%;
+			    border: none;
+			    box-shadow: none;
+			    background: transparent;
+			    background-image: none;
+			    -webkit-appearance: none;
+				}
+
+				select:focus {
+			    outline: none;
+				}
+			}
+
+			.students-wrapper .form-group .input-group .form-control,
+			.teachers-wrapper .form-group .input-group .form-control {				
+				border-top-left-radius: 4px;
+				border-bottom-left-radius: 4px;
+			}
+
+			.input-hider {
+				display: none;
+			}
+
 			.teachers-wrapper {
 				ul.dropdown-menu {
 

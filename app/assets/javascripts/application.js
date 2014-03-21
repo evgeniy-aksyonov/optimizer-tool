@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require remove_class_plugin
 //= require jquery_ujs
 //= require underscore
 //= require backbone
