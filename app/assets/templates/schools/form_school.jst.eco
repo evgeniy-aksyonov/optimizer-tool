@@ -100,7 +100,7 @@
 
 		<div class="salary-wrapper">
 			<div class="form-group clearfix">
-				<label for="salary">Average salary:</label>
+				<label for="salary">Average salary/benefits:</label>
 				<input type="text" name="salary" class="form-control" id="salary" placeholder="Salary">
 			</div>
 		</div>
