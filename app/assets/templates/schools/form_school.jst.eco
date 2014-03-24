@@ -59,7 +59,20 @@
 			<div class="form-group clearfix">
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
-	        <input type="text" name="teachers" class="form-control grade_all" id="teachers_count" placeholder="Number of teachers">
+	        <input type="text" name="teachers" class="form-control input-hider grade_K" id="" placeholder="K">
+	        <input type="text" name="teachers" class="form-control grade_all" id="" placeholder="all">
+	        <input type="text" name="teachers" class="form-control input-hider grade_1" id="" placeholder="grade 1">
+	        <input type="text" name="teachers" class="form-control input-hider grade_2" id="" placeholder="grade 2">
+	        <input type="text" name="teachers" class="form-control input-hider grade_3" id="" placeholder="grade 3">
+	        <input type="text" name="teachers" class="form-control input-hider grade_4" id="" placeholder="grade 4">
+	        <input type="text" name="teachers" class="form-control input-hider grade_5" id="" placeholder="grade 5">
+	        <input type="text" name="teachers" class="form-control input-hider grade_6" id="" placeholder="grade 6">
+	        <input type="text" name="teachers" class="form-control input-hider grade_7" id="" placeholder="grade 7">
+	        <input type="text" name="teachers" class="form-control input-hider grade_8" id="" placeholder="grade 8">
+	        <input type="text" name="teachers" class="form-control input-hider grade_9" id="" placeholder="grade 9">
+	        <input type="text" name="teachers" class="form-control input-hider grade_10" id="" placeholder="grade 10">
+	        <input type="text" name="teachers" class="form-control input-hider grade_11" id="" placeholder="grade 11">
+	        <input type="text" name="teachers" class="form-control input-hider grade_12" id="" placeholder="grade 12">
 	        <div class="input-group-btn">
 	          <div class="select-style">
 						  <select>
@@ -108,12 +121,30 @@
 
     $('body').addClass('form_school');
 
-    var saved_input;
+    var saved_input_stud;
+    var saved_input_teach;
 
-    var sum = function(){
+    var sum_stud = function() {
 
 	    var all_grades_inputs = $('.students-wrapper .input-group input[class*="grade_"]:not(.grade_all)');
 	    var all_input = $('.students-wrapper .input-group input.grade_all');
+	    var stud_overall_input_val = 0;
+
+    	for(var i=0; i<all_grades_inputs.length; i++) {
+				var current_input = all_grades_inputs[i];
+
+				if (current_input.name && current_input.className.indexOf("grade_all") < 0) {
+				  stud_overall_input_val += +current_input.value || 0;
+				}
+
+			}
+			all_input.val(stud_overall_input_val);
+    };
+
+    var sum_teach = function() {
+
+	    var all_grades_inputs = $('.teachers-wrapper .input-group input[class*="grade_"]:not(.grade_all)');
+	    var all_input = $('.teachers-wrapper .input-group input.grade_all');
 	    var stud_overall_input_val = 0;
 
     	for(var i=0; i<all_grades_inputs.length; i++) {
@@ -134,12 +165,27 @@
 
 			var	curr_input = $(this).closest("div.input-group").find("input.form-control:not(.input-hider)");
 			var curr_input_val = +curr_input.val() || 0;
-					saved_input = curr_input.attr('class').split(" ")[1];
+					saved_input_stud = curr_input.attr('class').split(" ")[1];
 
 			curr_input.toggleClass('input-hider');
 			$(this).closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
 
-			sum();
+			sum_stud();
+    });
+
+    // teachers counter logic
+    $('.teachers-wrapper .input-group-btn .select-style select').on('change', function(){
+
+    	var select_value = $(this).val();
+
+			var	curr_input = $(this).closest("div.input-group").find("input.form-control:not(.input-hider)");
+			var curr_input_val = +curr_input.val() || 0;
+					saved_input_stud = curr_input.attr('class').split(" ")[1];
+
+			curr_input.toggleClass('input-hider');
+			$(this).closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
+
+			sum_teach();
     });
 		
   }
