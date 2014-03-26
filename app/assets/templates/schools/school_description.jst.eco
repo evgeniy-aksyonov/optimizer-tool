@@ -90,7 +90,7 @@
       <p class="category">Total Salary($)</p>
     </li>
     <li>
-      <p>0</p>
+      <p class="teachers-set-aside">0</p>
       <p class="category">Teachers Set Aside</p>
     </li>
   </ul>
@@ -143,19 +143,21 @@
       var cell_timetable = $('p.timetable'),
           cell_class_size = $('p.class-size'),
           cell_teachers_needed = $('p.teachers-needed');
+          cell_teachers_set_aside = $('p.teachers-set-aside');
 
       // info-block variables
       var ib_timetable = $('.fte-table th').eq($('table td.highlighted').last().index()).find('p.learning-units').text(),
-          // ib_teachers_have,
+          ib_teachers_have = +$('p.teachers-have').text();
           ib_class_size = $('.fte-table td.highlighted').first().html(),
           ib_teachers_needed = Math.round(parseFloat($('.fte-table td.highlighted').last().html())),
           // ib_total_salary,
-          ib_teachers_set_aside; // ?
+          ib_teachers_set_aside = ib_teachers_have - ib_teachers_needed;
 
       // assigning values
       cell_timetable.html(ib_timetable);
       cell_class_size.html(ib_class_size);
       cell_teachers_needed.html(ib_teachers_needed);
+      cell_teachers_set_aside.html(ib_teachers_set_aside);
     }
 
   	tableEventsHandler();
