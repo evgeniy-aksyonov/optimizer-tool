@@ -1,5 +1,8 @@
 <h1>Report generated</h1>
 
+<h2>School: <%= @school.get('title') %></h2>
+<h3>Id: <span class="school_id"><%= @school.get('id') %></span></h3>
+
 <div class="report-table-container">
   <table class="report-table table table-bordered">
     <colgroup></colgroup>
@@ -24,14 +27,61 @@
       </tr>
     </thead>
 	  <tbody>
-      <tr><th>9</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><th>10</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><th>11</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><th>12</th><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      
 	  </tbody>
   </table>
+
 </div>
 
 <div class="link_wrapper">
   <a href="/" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
 </div>
+
+<script>
+  if (window.location.href.indexOf('report_generation') + 1 ) {
+
+// ======================
+
+
+    var school_id = $('.school_id').text();
+    var target_school;
+    
+    var number_of_grades;
+
+    function show_props(obj) {
+      var result = [];
+      for (var key in obj) {
+        if (key.indexOf("stud_grade_") + 1 && !(key.indexOf("stud_grade_all") + 1) && !(key.indexOf("stud_grade_k") + 1) ) {
+          if (obj[key] !== 0) {
+            result.push(key);
+          };
+        }
+      }
+      return result;
+    }
+
+// ======================
+
+    var s = new Tool.Collections.Schools();
+
+    s.fetch({
+      success: function(){
+        target_school = s.get(school_id);
+        var result_array = show_props(target_school.attributes);
+        number_of_grades = result_array.length;
+        console.log(result_array, number_of_grades);
+
+        $(result_array).each(function(){
+          $('.report-table tbody').append('<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>');
+        });
+      }
+    });
+
+// parse Int from str ==============================================
+    // var s = 'abc123';
+    // var number = s.match(/\d+$/);
+    // number = parseInt(number, 10);
+// =====================================================================
+
+  };
+</script>

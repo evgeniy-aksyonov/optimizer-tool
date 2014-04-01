@@ -5,7 +5,7 @@
 		<div class="title-wrapper">
 			<div class="form-group">
 				<label for="new_school_title">School:</label>
-				<input type="text" name="title" class="form-control" id="new_school_title" placeholder="Enter title">
+				<input type="text" name="title" class="form-control" id="new_school_title" placeholder="Enter title" required>
 			</div>
 		</div>
 
@@ -13,20 +13,20 @@
 			<div class="form-group">
 				<label for="students_count">Students:</label>
 				<div class="input-group">
-	        <input type="text" name="students" class="form-control input-hider grade_K" id="" placeholder="K">
-	        <input type="text" name="students" class="form-control grade_all" id="" placeholder="all">
-	        <input type="text" name="students" class="form-control input-hider grade_1" id="" placeholder="grade 1">
-	        <input type="text" name="students" class="form-control input-hider grade_2" id="" placeholder="grade 2">
-	        <input type="text" name="students" class="form-control input-hider grade_3" id="" placeholder="grade 3">
-	        <input type="text" name="students" class="form-control input-hider grade_4" id="" placeholder="grade 4">
-	        <input type="text" name="students" class="form-control input-hider grade_5" id="" placeholder="grade 5">
-	        <input type="text" name="students" class="form-control input-hider grade_6" id="" placeholder="grade 6">
-	        <input type="text" name="students" class="form-control input-hider grade_7" id="" placeholder="grade 7">
-	        <input type="text" name="students" class="form-control input-hider grade_8" id="" placeholder="grade 8">
-	        <input type="text" name="students" class="form-control input-hider grade_9" id="" placeholder="grade 9">
-	        <input type="text" name="students" class="form-control input-hider grade_10" id="" placeholder="grade 10">
-	        <input type="text" name="students" class="form-control input-hider grade_11" id="" placeholder="grade 11">
-	        <input type="text" name="students" class="form-control input-hider grade_12" id="" placeholder="grade 12">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_K" placeholder="K">
+	        <input type="text" pattern="\d*" name="students" class="form-control grade_all" placeholder="all">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_1" placeholder="grade 1">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_2" placeholder="grade 2">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_3" placeholder="grade 3">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_4" placeholder="grade 4">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_5" placeholder="grade 5">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_6" placeholder="grade 6">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_7" placeholder="grade 7">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_8" placeholder="grade 8">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_9" placeholder="grade 9">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_10" placeholder="grade 10">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_11" placeholder="grade 11">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_12" placeholder="grade 12">
 	        <div class="input-group-btn">
 	          <div class="select-style">
 						  <select>
@@ -59,20 +59,20 @@
 			<div class="form-group clearfix">
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
-	        <input type="text" name="teachers" class="form-control input-hider grade_K" id="" placeholder="K">
-	        <input type="text" name="teachers" class="form-control grade_all" id="" placeholder="all">
-	        <input type="text" name="teachers" class="form-control input-hider grade_1" id="" placeholder="grade 1">
-	        <input type="text" name="teachers" class="form-control input-hider grade_2" id="" placeholder="grade 2">
-	        <input type="text" name="teachers" class="form-control input-hider grade_3" id="" placeholder="grade 3">
-	        <input type="text" name="teachers" class="form-control input-hider grade_4" id="" placeholder="grade 4">
-	        <input type="text" name="teachers" class="form-control input-hider grade_5" id="" placeholder="grade 5">
-	        <input type="text" name="teachers" class="form-control input-hider grade_6" id="" placeholder="grade 6">
-	        <input type="text" name="teachers" class="form-control input-hider grade_7" id="" placeholder="grade 7">
-	        <input type="text" name="teachers" class="form-control input-hider grade_8" id="" placeholder="grade 8">
-	        <input type="text" name="teachers" class="form-control input-hider grade_9" id="" placeholder="grade 9">
-	        <input type="text" name="teachers" class="form-control input-hider grade_10" id="" placeholder="grade 10">
-	        <input type="text" name="teachers" class="form-control input-hider grade_11" id="" placeholder="grade 11">
-	        <input type="text" name="teachers" class="form-control input-hider grade_12" id="" placeholder="grade 12">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_K" placeholder="K">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="all">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_1" placeholder="grade 1">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_2" placeholder="grade 2">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_3" placeholder="grade 3">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_4" placeholder="grade 4">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_5" placeholder="grade 5">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_6" placeholder="grade 6">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_7" placeholder="grade 7">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_8" placeholder="grade 8">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_9" placeholder="grade 9">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_10" placeholder="grade 10">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_11" placeholder="grade 11">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_12" placeholder="grade 12">
 	        <div class="input-group-btn">
 	          <div class="select-style">
 						  <select>
@@ -101,12 +101,12 @@
 		<div class="salary-wrapper">
 			<div class="form-group clearfix">
 				<label for="salary">Average salary/benefits:</label>
-				<input type="text" name="salary" class="form-control" id="salary" placeholder="Salary">
+				<input type="text" pattern="\d*" name="salary" class="form-control" id="salary" placeholder="Salary" required>
 			</div>
 		</div>
 	</div>
 
-	<button type="submit" class="btn btn-success add-school">Add school</button>
+	<button type="submit" name="submit_btn" class="btn btn-success add-school">Add school</button>
 	
 </form>
 
@@ -123,6 +123,10 @@
 
     var saved_input_stud;
     var saved_input_teach;
+    // var stud_number_of_grades_filled;
+    // var teach_number_of_grades_filled;
+    var stud_this = $('.students-wrapper .input-group-btn .select-style select');
+    var teach_this = $('.teachers-wrapper .input-group-btn .select-style select');
 
     var sum_stud = function() {
 
@@ -158,35 +162,80 @@
 			all_input.val(stud_overall_input_val);
     };
 
-    // students counter logic
-    $('.students-wrapper .input-group-btn .select-style select').on('change', function(){
+    var stud_toggler = function () {
+    			// stud_this = $('.students-wrapper .input-group-btn .select-style select');
+    	var select_value = stud_this.val();
 
-    	var select_value = $(this).val();
-
-			var	curr_input = $(this).closest("div.input-group").find("input.form-control:not(.input-hider)");
+			var	curr_input = stud_this.closest("div.input-group").find("input.form-control:not(.input-hider)");
 			var curr_input_val = +curr_input.val() || 0;
 					saved_input_stud = curr_input.attr('class').split(" ")[1];
 
 			curr_input.toggleClass('input-hider');
-			$(this).closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
+			stud_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
+    };
 
+    var teach_toggler = function () {
+    			// teach_this = $('.teachers-wrapper .input-group-btn .select-style select');
+    	var select_value = teach_this.val();
+
+			var	curr_input = teach_this.closest("div.input-group").find("input.form-control:not(.input-hider)");
+			var curr_input_val = +curr_input.val() || 0;
+					saved_input_stud = curr_input.attr('class').split(" ")[1];
+
+			curr_input.toggleClass('input-hider');
+			teach_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
+    };
+
+    // students counter logic
+    stud_this.on('change', function(){
+    	stud_toggler();
 			sum_stud();
     });
 
     // teachers counter logic
-    $('.teachers-wrapper .input-group-btn .select-style select').on('change', function(){
-
-    	var select_value = $(this).val();
-
-			var	curr_input = $(this).closest("div.input-group").find("input.form-control:not(.input-hider)");
-			var curr_input_val = +curr_input.val() || 0;
-					saved_input_stud = curr_input.attr('class').split(" ")[1];
-
-			curr_input.toggleClass('input-hider');
-			$(this).closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
-
+    teach_this.on('change', function(){
+    	teach_toggler();
 			sum_teach();
     });
+
+    $('#new_school').on('submit', function(e){
+		  if ($('.students-wrapper .input-group .grade_all').val() === "") {
+		  	var self = this;
+			  e.preventDefault();
+			  alert("Please enter number of students.");
+		  } else if ($('.teachers-wrapper .input-group .grade_all').val() === "") {
+		  	var self = this;
+			  e.preventDefault();
+		  	alert("Please enter number of teachers.");
+		  }
+		  
+    	if ($('.students-wrapper .input-group-btn select').val() !== "all" || $('.teachers-wrapper .input-group-btn select').val() !== "all") {
+			  var self = this;
+			  e.preventDefault();
+
+		    stud_this.trigger('change');
+		    teach_this.trigger('change');
+		    self.submit();
+
+			 //  if ( $('.students-wrapper input.grade_all').val().match(/d/g) === null ) {
+				// 	alert('false null');
+				// } else if ( $('.students-wrapper input.grade_all').val().match(/d/g).length < 1 )  {
+				// 	alert('false length');
+				// } else if ($('.students-wrapper input.grade_all').val() === 0) {
+				// 	alert('false 0');
+				// } else {
+				// 	alert('true');
+		  // 		self.submit();
+				// }
+		  }
+
+		  
+		});
+
+
+    // $('#new_school').on('ajax:complete', function(){
+    // 	Tool.Routers.Main.navigate('/');
+    // });
 		
   }
 

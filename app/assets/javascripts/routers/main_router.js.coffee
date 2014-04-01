@@ -9,7 +9,7 @@ class Tool.Routers.MainRouter extends Backbone.Router
 		'form_teacher'              : 'form_teacher'
 		'school_description/:id'    : 'school_description'
 		'enrollment_table'          : 'enrollment_table'
-		'report_generation'         : 'report_generation'
+		'report_generation/:id'     : 'report_generation'
 
 	initialize: ->
 		@formSchoolView = new Tool.Views.FormSchool()
@@ -27,8 +27,6 @@ class Tool.Routers.MainRouter extends Backbone.Router
 			school = schools.get(id)
 			view = new Tool.Views.ReportGeneration({model: school})
 			$('#container').html(view.render().el)
-
-	
 
 	school_description: (id) ->
 		schools = new Tool.Collections.Schools()

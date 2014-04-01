@@ -3,8 +3,8 @@ class School < ActiveRecord::Base
 	# has_many :teachers, dependent: :destroy
 	# has_many :staffs, dependent: :destroy
 	# has_one :schoolinfos, dependent: :destroy
-	has_one :students_by_grades, dependent: :destroy
-	has_one :teachers_by_grades, dependent: :destroy
+	# has_one :students_by_grades, dependent: :destroy
+	# has_one :teachers_by_grades, dependent: :destroy
 	validates_presence_of :title
 
 	# after_create :generate_people
@@ -35,7 +35,7 @@ class School < ActiveRecord::Base
 	# end
 
 	# def generate_info
-	# 	StudentsByGrade.create :grade_9 => 99, :school_id => self.id
+	# 	StudentsByGrade.create :grade_9 => 79, :school_id => self.id
 	# end
 
 end

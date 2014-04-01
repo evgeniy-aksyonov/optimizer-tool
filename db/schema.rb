@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326105828) do
+ActiveRecord::Schema.define(version: 20140327141954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,34 @@ ActiveRecord::Schema.define(version: 20140326105828) do
     t.integer  "teachers"
     t.integer  "studcount"
     t.integer  "averagesalary"
+    t.integer  "stud_grade_k"
+    t.integer  "stud_grade_1"
+    t.integer  "stud_grade_2"
+    t.integer  "stud_grade_3"
+    t.integer  "stud_grade_4"
+    t.integer  "stud_grade_5"
+    t.integer  "stud_grade_6"
+    t.integer  "stud_grade_7"
+    t.integer  "stud_grade_8"
+    t.integer  "stud_grade_9"
+    t.integer  "stud_grade_10"
+    t.integer  "stud_grade_11"
+    t.integer  "stud_grade_12"
+    t.integer  "teach_grade_k"
+    t.integer  "teach_grade_1"
+    t.integer  "teach_grade_2"
+    t.integer  "teach_grade_3"
+    t.integer  "teach_grade_4"
+    t.integer  "teach_grade_5"
+    t.integer  "teach_grade_6"
+    t.integer  "teach_grade_7"
+    t.integer  "teach_grade_8"
+    t.integer  "teach_grade_9"
+    t.integer  "teach_grade_10"
+    t.integer  "teach_grade_11"
+    t.integer  "teach_grade_12"
+    t.integer  "stud_grade_all"
+    t.integer  "teach_grade_all"
   end
 
   create_table "staffs", force: true do |t|

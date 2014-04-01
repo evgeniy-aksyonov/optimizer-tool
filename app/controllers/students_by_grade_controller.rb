@@ -24,6 +24,6 @@ class StudentsByGradeController < ApplicationController
 	private
 
   def school_params
-    params.require(:students_by_grade).permit(:title, :students, :grade_9)
+    params.require(:students_by_grade).permit(:title, :students, :grade_k, :grade_1, :grade_2, :grade_3, :grade_4, :grade_5, :grade_6, :grade_7, :grade_8, :grade_9, :grade_10, :grade_11, :grade_12)
   end
 end
