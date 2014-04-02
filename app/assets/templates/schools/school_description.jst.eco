@@ -148,7 +148,7 @@
           ib_teachers_have = +$('p.teachers-have').text();
           ib_class_size = $('.fte-table td.highlighted').first().html(),
           ib_teachers_needed = Math.round(parseFloat($('.fte-table td.highlighted').last().html())),
-          // ib_total_salary,
+          ib_total_salary = +$('p.total_salary').text(),
           ib_teachers_set_aside = ib_teachers_have - ib_teachers_needed;
 
       // assigning values
@@ -156,9 +156,25 @@
       cell_class_size.html(ib_class_size);
       cell_teachers_needed.html(ib_teachers_needed);
       cell_teachers_set_aside.html(ib_teachers_set_aside);
+      
+      var info_block_data = {
+        timetable          : ib_timetable,
+        teachers_have      : ib_teachers_have,
+        class_size         : ib_class_size,
+        teachers_needed    : ib_teachers_needed,
+        total_salary       : ib_total_salary,
+        teachers_set_aside : ib_teachers_set_aside
+      };
+      
+      console.log(info_block_data);
+
+      // Put the object into storage
+      localStorage.setItem('info_block_data', JSON.stringify(info_block_data));
+
     }
 
-  	tableEventsHandler();
+    tableEventsHandler();
+
   //end of main IF  
   }
   

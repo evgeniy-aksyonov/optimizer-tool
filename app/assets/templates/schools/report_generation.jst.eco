@@ -21,7 +21,7 @@
         <th rowspan="2">Students</th>
         <th rowspan="2">Class Size</th>
         <th rowspan="2">Teachers Have</th>
-        <th rowspan="2">Needed</th>
+        <th rowspan="2">Needed Total</th>
         <th rowspan="2">Salary + Benefits</th>
         <th rowspan="2">Set Aside</th>
       </tr>
@@ -35,6 +35,10 @@
 
 <div class="link_wrapper">
   <a href="/" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
+</div>
+
+<div class="info-block-hided">
+  <p></p>
 </div>
 
 <script>
@@ -66,22 +70,39 @@
 
     s.fetch({
       success: function(){
-        target_school = s.get(school_id);
-        var result_array = show_props(target_school.attributes);
-        number_of_grades = result_array.length;
-        console.log(result_array, number_of_grades);
+        // Retrieve the object from storage
+        var retrievedObject = JSON.parse(localStorage.getItem('info_block_data'));
 
-        $(result_array).each(function(){
-          $('.report-table tbody').append('<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>');
+        target_school = s.get(school_id);
+
+        var result_array = show_props(target_school.attributes);
+        var curr_arr_el;
+
+        var curr_grade_studs;
+        var curr_grade_teach;
+        var curr_grade_teach_salary; 
+        var curr_grade_teach_set_aside;
+        var total_studs = target_school.attributes.stud_grade_all;
+        var total_teach = target_school.attributes.teach_grade_all;
+        var average_salary = target_school.attributes.averagesalary;
+        var total_teach_set_aside = retrievedObject.teachers_have - retrievedObject.teachers_needed;
+
+        number_of_grades = result_array.length; // remove later
+
+        $(result_array).each(function(i){
+
+          curr_arr_el = result_array[i].split('stud_grade_')[1];
+          curr_grade_studs = (target_school.attributes['stud_grade_'+curr_arr_el]);
+          curr_grade_teach = (target_school.attributes['teach_grade_'+curr_arr_el]);
+          curr_grade_teach_salary = curr_grade_teach * average_salary;
+          curr_grade_teach_set_aside = curr_grade_teach - retrievedObject.teachers_needed;
+
+          $('.report-table tbody').append('<tr><td>'+curr_arr_el+'</td><td>'+retrievedObject.timetable+'</td><td class="students">'+curr_grade_studs+'</td><td>'+retrievedObject.class_size+'</td><td>'+curr_grade_teach+'</td><td>'+retrievedObject.teachers_needed+'</td><td>'+curr_grade_teach_salary+'</td><td>'+curr_grade_teach_set_aside+'</td></tr>');
+          // $('.report-table tbody tr').eq(i).find('td.students').html(school_as);
         });
+        $('.report-table tbody').append('<tr><td class="bold">Total</td><td></td><td>'+total_studs+'</td><td>'+retrievedObject.class_size+'</td><td>'+total_teach+'</td><td>'+retrievedObject.teachers_needed+'</td><td>'+retrievedObject.total_salary+'</td><td>'+total_teach_set_aside+'</td></tr>');
       }
     });
-
-// parse Int from str ==============================================
-    // var s = 'abc123';
-    // var number = s.match(/\d+$/);
-    // number = parseInt(number, 10);
-// =====================================================================
 
   };
 </script>
