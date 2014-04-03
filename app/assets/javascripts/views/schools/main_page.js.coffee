@@ -13,6 +13,7 @@ class Tool.Views.MainPage extends Backbone.View
   initialize: ->
     @collection = new Tool.Collections.Schools()
     @collection.fetch()
+    @collection.on('sync', @sortingFunc)
     @collection.on('add', @addOneSchool, this)
     @collection.on('reset', @addOneSchool)
 
@@ -21,13 +22,12 @@ class Tool.Views.MainPage extends Backbone.View
     @collection.each(@addOneSchool)
     this
 
-  addAllSchools: =>
-    @collection.each(@addOneSchool)
+  # addAllSchools: =>
+  #   @collection.each(@addOneSchool)
 
   addOneSchool: (school) =>
     view = new Tool.Views.School(model: school)
     @$('#schools').append(view.render().el)
-    # sorting schools table by id in desc
-    $("#schools").tablesorter({sortList: [[0,1]]})
 
-  	
+  sortingFunc: ->
+    $("#schools").tablesorter({sortList: [[0,1]]})
