@@ -27,6 +27,10 @@ body {
 
 	div#table_container {
 		table {
+			thead {
+				cursor: pointer;
+			}
+
 			td {
 				vertical-align: middle;
 			}

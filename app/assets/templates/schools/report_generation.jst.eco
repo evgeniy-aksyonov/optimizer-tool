@@ -98,7 +98,6 @@
           curr_grade_teach_set_aside = curr_grade_teach - retrievedObject.teachers_needed;
 
           $('.report-table tbody').append('<tr><td>'+curr_arr_el+'</td><td>'+retrievedObject.timetable+'</td><td class="students">'+curr_grade_studs+'</td><td>'+retrievedObject.class_size+'</td><td>'+curr_grade_teach+'</td><td>'+retrievedObject.teachers_needed+'</td><td>'+curr_grade_teach_salary+'</td><td>'+curr_grade_teach_set_aside+'</td></tr>');
-          // $('.report-table tbody tr').eq(i).find('td.students').html(school_as);
         });
         $('.report-table tbody').append('<tr><td class="bold">Total</td><td></td><td>'+total_studs+'</td><td>'+retrievedObject.class_size+'</td><td>'+total_teach+'</td><td>'+retrievedObject.teachers_needed+'</td><td>'+retrievedObject.total_salary+'</td><td>'+total_teach_set_aside+'</td></tr>');
       }

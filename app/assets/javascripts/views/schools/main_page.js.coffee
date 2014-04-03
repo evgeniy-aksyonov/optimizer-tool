@@ -27,5 +27,7 @@ class Tool.Views.MainPage extends Backbone.View
   addOneSchool: (school) =>
     view = new Tool.Views.School(model: school)
     @$('#schools').append(view.render().el)
+    # sorting schools table by id in desc
+    $("#schools").tablesorter({sortList: [[0,1]]})
 
   	

@@ -229,13 +229,7 @@
 				// }
 		  }
 
-		  
 		});
-
-
-    // $('#new_school').on('ajax:complete', function(){
-    // 	Tool.Routers.Main.navigate('/');
-    // });
 		
   }
 
