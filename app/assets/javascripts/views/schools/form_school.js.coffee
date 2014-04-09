@@ -61,6 +61,7 @@ class Tool.Views.FormSchool extends Backbone.View
       success: ->
         Tool.routers.main.navigate("/", true)
 
+
   handleError: (school, response) ->
     if response.status == 422
       errors = $.parseJSON(response.responseText).errors

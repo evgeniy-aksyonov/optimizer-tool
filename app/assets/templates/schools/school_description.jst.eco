@@ -165,8 +165,6 @@
         total_salary       : ib_total_salary,
         teachers_set_aside : ib_teachers_set_aside
       };
-      
-      console.log(info_block_data);
 
       // Put the object into storage
       localStorage.setItem('info_block_data', JSON.stringify(info_block_data));

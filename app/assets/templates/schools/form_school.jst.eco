@@ -14,7 +14,7 @@
 				<label for="students_count">Students:</label>
 				<div class="input-group">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_K" placeholder="K">
-	        <input type="text" pattern="\d*" name="students" class="form-control grade_all" placeholder="all">
+	        <input type="text" pattern="\d*" name="students" class="form-control grade_all" placeholder="all" required>
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_1" placeholder="grade 1">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_2" placeholder="grade 2">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_3" placeholder="grade 3">
@@ -60,7 +60,7 @@
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_K" placeholder="K">
-	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="all">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="all" required>
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_1" placeholder="grade 1">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_2" placeholder="grade 2">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_3" placeholder="grade 3">
@@ -116,19 +116,20 @@
 
 
 <script>
-  
-  if (location.href.indexOf('form_school') + 1 ) {
+  var lh = window.location.href;
+  if (lh.indexOf('form_school') + 1 ) {
+
+  	var flag_submit;
 
     $('body').addClass('form_school');
 
     var saved_input_stud;
     var saved_input_teach;
-    // var stud_number_of_grades_filled;
-    // var teach_number_of_grades_filled;
+
     var stud_this = $('.students-wrapper .input-group-btn .select-style select');
     var teach_this = $('.teachers-wrapper .input-group-btn .select-style select');
 
-    var sum_stud = function() {
+    function sum_stud () {
 
 	    var all_grades_inputs = $('.students-wrapper .input-group input[class*="grade_"]:not(.grade_all)');
 	    var all_input = $('.students-wrapper .input-group input.grade_all');
@@ -143,9 +144,9 @@
 
 			}
 			all_input.val(stud_overall_input_val);
-    };
+    }
 
-    var sum_teach = function() {
+    function sum_teach () {
 
 	    var all_grades_inputs = $('.teachers-wrapper .input-group input[class*="grade_"]:not(.grade_all)');
 	    var all_input = $('.teachers-wrapper .input-group input.grade_all');
@@ -160,9 +161,9 @@
 
 			}
 			all_input.val(stud_overall_input_val);
-    };
+    }
 
-    var stud_toggler = function () {
+    function stud_toggler () {
     			// stud_this = $('.students-wrapper .input-group-btn .select-style select');
     	var select_value = stud_this.val();
 
@@ -172,9 +173,9 @@
 
 			curr_input.toggleClass('input-hider');
 			stud_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
-    };
+    }
 
-    var teach_toggler = function () {
+    function teach_toggler () {
     			// teach_this = $('.teachers-wrapper .input-group-btn .select-style select');
     	var select_value = teach_this.val();
 
@@ -184,7 +185,81 @@
 
 			curr_input.toggleClass('input-hider');
 			teach_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
-    };
+    }
+
+    function waiter_handler() {
+
+	    var flag_1;
+	  	var ready_state_waiter = setInterval(function () {
+				var rs = document.readyState;
+
+		    if(rs !== "complete") return;
+		    
+		    clearTimeout(ready_state_waiter);
+		    flag_1 = true;
+
+			}, 50);
+
+	  	var flag_2;
+	  	var ready_state_waiter_2 = setInterval(function () {
+	  		var loc_search = window.location.search;
+
+		    if(loc_search === "") return;
+		    
+		    clearTimeout(ready_state_waiter_2);
+		    flag_2 = true;
+
+			}, 50);
+
+	  	if (lh.indexOf("form_school") + 1) {
+				var ready_state_waiter_3 = setInterval(function () {
+
+			    if(flag_1 === true && flag_2 === true) {
+
+				    clearTimeout(ready_state_waiter_2);
+
+				    flag_1 = false;
+				    flag_2 = false;
+
+				    var object = {};
+						_.extend(object, Backbone.Events);
+						object.on("redirect", function() {
+						  Tool.routers.main.navigate("/", true)
+						});
+						object.trigger("redirect");
+			    } else {
+			    	return;
+			    }
+				}, 50);
+	  	}
+    }
+
+    function submitHandler() {
+
+	    $('#new_school').on('submit', function(e){
+	    	
+			  if ($('.students-wrapper .input-group .grade_all').val() === "") {
+			  	var self = this;
+				  e.preventDefault();
+				  alert("Please enter number of students.");
+				  return;
+			  } else if ($('.teachers-wrapper .input-group .grade_all').val() === "") {
+			  	var self = this;
+				  e.preventDefault();
+			  	alert("Please enter number of teachers.");
+			  	return;
+			  }
+			  if ($('.students-wrapper .input-group-btn select').val() !== "all" || $('.teachers-wrapper .input-group-btn select').val() !== "all") {
+				  var self = this;
+				  e.preventDefault();
+
+			    stud_this.trigger('change');
+			    teach_this.trigger('change');
+			    
+			    self.submit();
+			  }
+			});
+		}
 
     // students counter logic
     stud_this.on('change', function(){
@@ -198,39 +273,8 @@
 			sum_teach();
     });
 
-    $('#new_school').on('submit', function(e){
-		  if ($('.students-wrapper .input-group .grade_all').val() === "") {
-		  	var self = this;
-			  e.preventDefault();
-			  alert("Please enter number of students.");
-		  } else if ($('.teachers-wrapper .input-group .grade_all').val() === "") {
-		  	var self = this;
-			  e.preventDefault();
-		  	alert("Please enter number of teachers.");
-		  }
-		  
-    	if ($('.students-wrapper .input-group-btn select').val() !== "all" || $('.teachers-wrapper .input-group-btn select').val() !== "all") {
-			  var self = this;
-			  e.preventDefault();
-
-		    stud_this.trigger('change');
-		    teach_this.trigger('change');
-		    self.submit();
-
-			 //  if ( $('.students-wrapper input.grade_all').val().match(/d/g) === null ) {
-				// 	alert('false null');
-				// } else if ( $('.students-wrapper input.grade_all').val().match(/d/g).length < 1 )  {
-				// 	alert('false length');
-				// } else if ($('.students-wrapper input.grade_all').val() === 0) {
-				// 	alert('false 0');
-				// } else {
-				// 	alert('true');
-		  // 		self.submit();
-				// }
-		  }
-
-		});
-		
+    waiter_handler();
+		submitHandler();
   }
 
 </script>

@@ -30,4 +30,5 @@ class Tool.Views.MainPage extends Backbone.View
     @$('#schools').append(view.render().el)
 
   sortingFunc: ->
+    # sorting main table by id(decs) by default
     $("#schools").tablesorter({sortList: [[0,1]]})
