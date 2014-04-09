@@ -198,7 +198,7 @@
 		    clearTimeout(ready_state_waiter);
 		    flag_1 = true;
 
-			}, 50);
+			}, 100);
 
 	  	var flag_2;
 	  	var ready_state_waiter_2 = setInterval(function () {
@@ -209,7 +209,7 @@
 		    clearTimeout(ready_state_waiter_2);
 		    flag_2 = true;
 
-			}, 50);
+			}, 100);
 
 	  	if (lh.indexOf("form_school") + 1) {
 				var ready_state_waiter_3 = setInterval(function () {
@@ -230,7 +230,7 @@
 			    } else {
 			    	return;
 			    }
-				}, 50);
+				}, 100);
 	  	}
     }
 
