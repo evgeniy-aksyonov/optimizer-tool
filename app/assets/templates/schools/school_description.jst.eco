@@ -1,10 +1,10 @@
-<h2>Enrollment table</h2>
-<h2>School Title: <%= @school.attributes.title %></h2>
+<!-- <h3>Enrollment table</h3> -->
+<h3>School Title: <%= @school.attributes.title %></h3>
 
 <hr>
 
-<h3>TimeWise Resource Optimization Calculator</h3>
-<h4>TOOL 1: Linking Students, Class Size, Sections & FTE</h4>
+<h4>TimeWise Resource Optimization Calculator</h4>
+<h5>TOOL 1: Linking Students, Class Size, Sections & FTE</h5>
 
 <div class="sort_container">
   <ul class="sort_by_grade pagination pagination-lg">
