@@ -14,7 +14,7 @@
 				<label for="students_count">Students:</label>
 				<div class="input-group">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_K" placeholder="K">
-	        <input type="text" pattern="\d*" name="students" class="form-control grade_all" placeholder="all" required>
+	        <input type="text" pattern="\d*" name="students" class="form-control grade_all" placeholder="Total Students" required>
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_1" placeholder="grade 1">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_2" placeholder="grade 2">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_3" placeholder="grade 3">
@@ -45,7 +45,7 @@
 			        	<option value="11">11</option>
 			        	<option value="12">12</option>
 						  </select>
-						  <span class="glyphicon glyphicon-chevron-down"></span>
+						  <!-- <span class="glyphicon glyphicon-chevron-down"></span> -->
 						</div>
 	        </div><!-- /btn-group -->
 	      </div><!-- /input-group -->
@@ -60,7 +60,7 @@
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_K" placeholder="K">
-	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="all" required>
+	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="Total Students" required>
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_1" placeholder="grade 1">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_2" placeholder="grade 2">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_3" placeholder="grade 3">
@@ -91,7 +91,7 @@
 			        	<option value="11">11</option>
 			        	<option value="12">12</option>
 						  </select>
-						  <span class="glyphicon glyphicon-chevron-down"></span>
+						  <!-- <span class="glyphicon glyphicon-chevron-down"></span> -->
 						</div>
 	        </div><!-- /btn-group -->
 	      </div><!-- /input-group -->
