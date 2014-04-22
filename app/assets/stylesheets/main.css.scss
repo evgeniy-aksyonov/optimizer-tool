@@ -180,7 +180,15 @@ body {
 
 	}
 
-// Report page
+// ============ Description page ======
+
+	&.enrollment-table {
+		p#s_id {
+			display: none;
+		}
+	}
+
+// ============ Report page ======
 
 	table.report-table {
 		text-align: center;
