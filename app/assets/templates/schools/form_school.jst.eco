@@ -13,7 +13,7 @@
 			<div class="form-group">
 				<label for="students_count">Students:</label>
 				<div class="input-group">
-	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_K" placeholder="K">
+	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_k" placeholder="Kindergarten">
 	        <input type="text" pattern="\d*" name="students" class="form-control grade_all" placeholder="Total Students" required>
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_1" placeholder="grade 1">
 	        <input type="text" pattern="\d*" name="students" class="form-control input-hider grade_2" placeholder="grade 2">
@@ -31,7 +31,7 @@
 	          <div class="select-style">
 						  <select>
 						    <option value="all">All</option>
-			        	<option value="K">K</option>
+			        	<option value="k">k</option>
 			        	<option value="1">1</option>
 			        	<option value="2">2</option>
 			        	<option value="3">3</option>
@@ -59,8 +59,8 @@
 			<div class="form-group clearfix">
 				<label for="teachers_count">Teachers:</label>
 				<div class="input-group">
-	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_K" placeholder="K">
-	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="Total Students" required>
+	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_k" placeholder="Kindergarten">
+	        <input type="text" pattern="\d*" name="teachers" class="form-control grade_all" placeholder="Total Teachers" required>
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_1" placeholder="grade 1">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_2" placeholder="grade 2">
 	        <input type="text" pattern="\d*" name="teachers" class="form-control input-hider grade_3" placeholder="grade 3">
@@ -77,7 +77,7 @@
 	          <div class="select-style">
 						  <select>
 						    <option value="all">All</option>
-			        	<option value="K">K</option>
+			        	<option value="k">k</option>
 			        	<option value="1">1</option>
 			        	<option value="2">2</option>
 			        	<option value="3">3</option>

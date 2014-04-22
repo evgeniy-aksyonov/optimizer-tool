@@ -54,7 +54,7 @@
     function show_props(obj) {
       var result = [];
       for (var key in obj) {
-        if (key.indexOf("stud_grade_") + 1 && !(key.indexOf("stud_grade_all") + 1) && !(key.indexOf("stud_grade_k") + 1) ) {
+        if (key.indexOf("stud_grade_") + 1 && !(key.indexOf("stud_grade_all") + 1) ) {
           if (obj[key] !== 0) {
             result.push(key);
           };

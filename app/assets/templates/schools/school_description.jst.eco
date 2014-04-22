@@ -119,15 +119,67 @@
     }
 
     // table populating
-    function populateTable () {
+    function populateTable (grade) {
       var class_size_range = [35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14];
       var table_body = $('.fte-table tbody');
       var curr_students_td_val = null;
       var curr_sections_td_val = null;
+      var str;
+      var grade = grade || 'all';
+
+      table_body.html('');
+
+      // need DRY implementation
+      switch (grade) {
+      case 'all':
+        str = '<%= @school.attributes.stud_grade_all %>';
+        break;
+      case 1:
+        str = '<%= @school.attributes.stud_grade_1 %>';
+        break;
+      case 2:
+        str = '<%= @school.attributes.stud_grade_2 %>';
+        break;
+      case 3:
+        str = '<%= @school.attributes.stud_grade_3 %>';
+        break;
+      case 4:
+        str = '<%= @school.attributes.stud_grade_4 %>';
+        break;
+      case 5:
+        str = '<%= @school.attributes.stud_grade_5 %>';
+        break;
+      case 6:
+        str = '<%= @school.attributes.stud_grade_6 %>';
+        break;
+      case 7:
+        str = '<%= @school.attributes.stud_grade_7 %>';
+        break;
+      case 8:
+        str = '<%= @school.attributes.stud_grade_8 %>';
+        break;
+      case 9:
+        str = '<%= @school.attributes.stud_grade_9 %>';
+        break;
+      case 10:
+        str = '<%= @school.attributes.stud_grade_10 %>';
+        break;
+      case 11:
+        str = '<%= @school.attributes.stud_grade_11 %>';
+        break;
+      case 12:
+        str = '<%= @school.attributes.stud_grade_12 %>';
+        break;
+      case 'k':
+        str = '<%= @school.attributes.stud_grade_k %>';
+        break;
+      default:
+        str = '<%= @school.attributes.stud_grade_all %>';
+      }
 
       $(class_size_range).each(function(i){
 
-        table_body.append('<tr><td><%= @school.attributes.stud_grade_all %></td><td>'+class_size_range[i]+'</td><td class="sections"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
+        table_body.append('<tr><td>'+str+'</td><td>'+class_size_range[i]+'</td><td class="sections"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
         
         if (class_size_range[i] === 30) {
           table_body.find('tr').eq(i).find('td:last').addClass('default-highlight');
@@ -197,6 +249,25 @@
 
           $(non_empty_grades).each(function(i){
             $('.sort_container .sort_by_grade').append('<li><a href="#">'+non_empty_grades[i]+'</a></li>');
+          });
+
+          $('.sort_container .sort_by_grade li a').on('click', function(e){
+            $('.sort_container .sort_by_grade li').removeClass('active');
+            $(this).closest('li').addClass('active');
+            var sort_grade = isNaN($(this).text()) ? $(this).text() : +$(this).text();
+            populateTable(sort_grade);
+            $('.default-highlight').trigger('click');
+
+            // $('.fte-table-container .fte-table tbody tr td:nth-child(2)').each(function(){
+            //   if ($(this).text() === 30) {
+            //     $(this).addClass();
+            //   }
+            // });
+
+            // if ($('.fte-table-container .fte-table tbody tr:nth-child(6) td:nth-child(2)').text() === 30) {
+              
+            // }
+            e.preventDefault();
           });
         }
       });
