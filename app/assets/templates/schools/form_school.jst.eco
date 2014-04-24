@@ -106,6 +106,19 @@
 		</div>
 	</div>
 
+	<div class="clear"></div>
+
+	<div class="dynamic-list-wrapper dynamic-list-wrapper-stud">
+		<ul class="dynamic-list">
+		</ul>
+	</div>
+
+	<div class="dynamic-list-wrapper dynamic-list-wrapper-teach">
+		<ul class="dynamic-list">
+		</ul>
+	</div>
+
+
 	<button type="submit" name="submit_btn" class="btn btn-success add-school">Add school</button>
 	
 </form>
@@ -164,28 +177,48 @@
     }
 
     function stud_toggler () {
-    			// stud_this = $('.students-wrapper .input-group-btn .select-style select');
     	var select_value = stud_this.val();
 
-			var	curr_input = stud_this.closest("div.input-group").find("input.form-control:not(.input-hider)");
+      var curr_input = stud_this.closest("div.input-group").find("input.form-control:not(.input-hider)");
+			var	curr_input_class_number = curr_input.attr('class').split('form-control grade_')[1];
 			var curr_input_val = +curr_input.val() || 0;
 					saved_input_stud = curr_input.attr('class').split(" ")[1];
+
+      var list_stud = $('.dynamic-list-wrapper-stud ul');
+      var list_li_stud = '<li class="'+saved_input_stud+'">Grade '+curr_input_class_number+': <span>'+curr_input_val+'</span></li>';
+
+      if (!list_stud.find('li.'+saved_input_stud).length && curr_input_val !== 0) {
+        list_stud.prepend(list_li_stud);
+      }
 
 			curr_input.toggleClass('input-hider');
 			stud_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
     }
 
     function teach_toggler () {
-    			// teach_this = $('.teachers-wrapper .input-group-btn .select-style select');
     	var select_value = teach_this.val();
 
 			var	curr_input = teach_this.closest("div.input-group").find("input.form-control:not(.input-hider)");
+			var	curr_input_class_number = curr_input.attr('class').split('form-control grade_')[1];
 			var curr_input_val = +curr_input.val() || 0;
-					saved_input_stud = curr_input.attr('class').split(" ")[1];
+					saved_input_teach = curr_input.attr('class').split(" ")[1];
+
+			var list_teach = $('.dynamic-list-wrapper-teach ul');
+      var list_li_teach = '<li class="'+saved_input_teach+'">Grade '+curr_input_class_number+': <span>'+curr_input_val+'</span></li>';
+
+      if (!list_teach.find('li.'+saved_input_teach).length && curr_input_val !== 0) {
+        list_teach.prepend(list_li_teach);
+      }
 
 			curr_input.toggleClass('input-hider');
 			teach_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
     }
+
+    // function grades_info_stud () {
+    // 	var list_stud = $('.dynamic-list-wrapper-stud ul'),
+    // 			list_li = '<li>Grade '+li_grade+'<p></p></li>';
+
+    // }
 
     function waiter_handler() {
 
