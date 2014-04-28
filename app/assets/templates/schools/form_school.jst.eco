@@ -187,8 +187,10 @@
       var list_stud = $('.dynamic-list-wrapper-stud ul');
       var list_li_stud = '<li class="'+saved_input_stud+'">Grade '+curr_input_class_number+': <span>'+curr_input_val+'</span></li>';
 
-      if (!list_stud.find('li.'+saved_input_stud).length && curr_input_val !== 0) {
+      if (!list_stud.find('li.'+saved_input_stud).length && curr_input_val !== 0 && !(list_li_stud.indexOf('grade_all') + 1)) {
         list_stud.prepend(list_li_stud);
+      } else if (list_stud.find('li.'+saved_input_stud).length && list_stud.find('li.'+saved_input_stud+' span').text() !== curr_input.val() ) {
+      	list_stud.find('li.'+saved_input_stud+' span').html(curr_input.val());
       }
 
 			curr_input.toggleClass('input-hider');
@@ -206,19 +208,15 @@
 			var list_teach = $('.dynamic-list-wrapper-teach ul');
       var list_li_teach = '<li class="'+saved_input_teach+'">Grade '+curr_input_class_number+': <span>'+curr_input_val+'</span></li>';
 
-      if (!list_teach.find('li.'+saved_input_teach).length && curr_input_val !== 0) {
+      if (!list_teach.find('li.'+saved_input_teach).length && curr_input_val !== 0 && !(list_li_teach.indexOf('grade_all') + 1)) {
         list_teach.prepend(list_li_teach);
+      } else if (list_teach.find('li.'+saved_input_teach).length && list_teach.find('li.'+saved_input_teach+' span').text() !== curr_input.val() ) {
+      	list_teach.find('li.'+saved_input_teach+' span').html(curr_input.val());
       }
 
 			curr_input.toggleClass('input-hider');
 			teach_this.closest("div.input-group").find("input.form-control.grade_"+select_value).toggleClass('input-hider');
     }
-
-    // function grades_info_stud () {
-    // 	var list_stud = $('.dynamic-list-wrapper-stud ul'),
-    // 			list_li = '<li>Grade '+li_grade+'<p></p></li>';
-
-    // }
 
     function waiter_handler() {
 
